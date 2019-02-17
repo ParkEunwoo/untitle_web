@@ -8,7 +8,12 @@ import {
     UpIndex,
     LoginPage,
     SignUpPage,
-    CheckPage
+    CheckPage,
+    MyPage,
+    PortFolio,
+    RecruitPage,
+    ApplyPage,
+    TimeTablePage
 } from 'pages';
 
 const App = () => {
@@ -18,11 +23,12 @@ const App = () => {
             <Route path="/yena" component={UpIndex}/>
             <Route exact path="/yena/login" component={LoginPage} />
             <Route exact path="/yena/signup" component={SignUpPage} />
-            <Route exact path="/yena/check" component={CheckPage} />{/* 
-            <Route exact path="/yena/mypage" component={MyPage} />
-            <Route exact path="/yena/calendar" component={Calendar} />
-            <Route exact path="/yena/portfolio" component={PortFolio} />
-            <Route exact path="/yena/activity" component={Activity} /> */}
+            <Route exact path="/yena/check" component={CheckPage} /> 
+            <Route exact path="/junsik" component={MyPage} />
+            <Route exact path="/jungmin" component={RecruitPage} />
+            <Route exact path="/jungmin/apply" component={ApplyPage} />
+            <Route exact path="/jungmin/timetable" component={TimeTablePage} />
+            <Route exact path="/sungmin" component={PortFolio} />
             <Route exact path="/jihye" component={InputActivity}/>
             <Route exact path="/jihye/notice" component={NoticeBoard}/>
             <Route exact path="/jihye/notice/share" component={ShareActivity}/>

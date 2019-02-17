@@ -1,0 +1,147 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+html,body{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  display: flex; /*flex superpowers activated! */
+  flex-direction: column;
+}
+a{
+  text-decoration: none;
+}
+
+.menu nav{
+  border: solid 1px gray;
+}
+.menu nav ul {
+    display: flex;
+    list-style: none;
+}
+.menu nav ul li {
+    flex: 0 0 auto;
+    padding: 3px 20px;
+    border: solid 1px gray;
+}
+.menu nav ul li:nth-child(1) {
+    margin-right: auto; /*applied only to the right*/
+}
+.content{
+  display: flex;
+}
+.submenu nav{
+  border: solid 1px gray;
+  padding:10px;
+}
+.submenu nav ul{
+  list-style: none;
+}
+.submenu nav ul li{
+  padding: 3px 20px;
+  border: solid 1px gray;
+}
+.submenu nav ul form{
+font-size: 0.8em;
+margin-left:-30px;
+}
+.submenu .head {
+  display: grid;
+  grid-template-columns: 60px 60px 1fr;
+  grid-template-areas: "img content";
+  font-size: 0.8em;
+  margin-left:-30px;
+  margin-bottom:10px;
+}
+.submenu .head img {
+  transform: scale(1.0);
+  width: 50px;
+  height: 50px;
+}
+
+main{
+  flex: 1 0 auto;
+  display: flex;
+}
+footer{
+  flex: 1 1 auto;
+  padding: 10px;
+  border: solid 1px gray;
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  grid-gap: 10px;
+  border: 1px solid #D5D5D5;
+  padding:15px;  
+  margin-top:30px;
+  margin-left: 30px;
+  overflow: hidden;
+
+}
+.collection {
+  height: 600px;
+  line-height: 0;
+  overflow: hidden;
+  border: 1px solid #D5D5D5;
+  padding:15px; 
+}
+.collection img {
+  width: 600px;
+  transform: scale(1.0);
+}
+.collection p {
+  font-size: 0.8em;
+  padding: 2px;
+}
+.collection li {
+  display: flex;
+  font-size: 0.8em;
+  padding: 8px;
+}
+.collection .head {
+  display: grid;
+  grid-template-columns: 40px 70px 1fr;
+  grid-template-areas: "img content";
+  font-size: 1.2em;
+  margin:5px;
+}
+.collection .head img {
+  transform: scale(1.0);
+  width: 30px;
+  height: 30px;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
