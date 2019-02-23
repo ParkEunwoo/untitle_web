@@ -1,6 +1,6 @@
 import React from 'react';
 import Menu from './components/Menu';
-import { Route } from 'react-router-dom';
+import { Route,  } from 'react-router-dom';
 import {
     InputActivity,
     NoticeBoard,
@@ -29,9 +29,9 @@ const App = () => {
             <Route exact path="/jungmin/apply" component={ApplyPage} />
             <Route exact path="/jungmin/timetable" component={TimeTablePage} />
             <Route exact path="/sungmin" component={PortFolio} />
-            <Route exact path="/jihye" component={InputActivity}/>
+            <Route exact path="/jihye/notice/share/:type/:title/:leader" component={ShareActivity}/>
             <Route exact path="/jihye/notice" component={NoticeBoard}/>
-            <Route exact path="/jihye/notice/share" component={ShareActivity}/>
+            <Route exact path="/jihye/:type/:title/:leader" component={InputActivity}/>
         </div>
     );
 };
