@@ -27,7 +27,7 @@ const App = () => {
             <Route exact path="/junsik" component={MyPage} />
             <Route exact path="/jungmin" component={RecruitPage} />
             <Route exact path="/jungmin/apply" component={ApplyPage} />
-            <Route exact path="/jungmin/timetable" component={TimeTablePage} />
+            <Route exact path="/jungmin/apply/timetable" component={TimeTablePage} />
             <Route exact path="/sungmin" component={PortFolio} />
             <Route exact path="/jihye" component={InputActivity}/>
             <Route exact path="/jihye/notice" component={NoticeBoard}/>
