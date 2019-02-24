@@ -41,6 +41,7 @@ class Apply extends Component{
                 <NavLink to="/jungmin/timetable">내 시간표</NavLink>
               </p>
             </div>
+            </form>
       </div>
     );
   }
