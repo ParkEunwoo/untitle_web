@@ -17,7 +17,7 @@ class CollectionItem extends Component {
           <a href="이미지 커짐.html">
             <img src="https://images.techhive.com/images/article/2014/12/project_management-100536263-primary.idge.jpg"
              alt="project img"></img></a>
-            }
+            
           <a href="해당 프로젝트 페이지.html">
           <h3>{this.props.title}</h3>
             <p>{this.props.date}</p>
