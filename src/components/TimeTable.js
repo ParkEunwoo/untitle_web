@@ -42,7 +42,7 @@ class TimeTable extends Component {
             <div class = "time">
               <p>과목명 <input type="text" name="topic"/></p>
               <p>요일
-                <input list="browsers">
+                <input list="browsers" />
                   <datalist id="daylist">
                     <option value="월"/>
                     <option value="화"/>
@@ -50,7 +50,6 @@ class TimeTable extends Component {
                     <option value="목"/>
                     <option value="금"/>
                   </datalist>
-                </input>
                 </p>
               <p>시작시간</p>
               <p>종료시간</p>
