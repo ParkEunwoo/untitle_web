@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
 import RecruitList from 'components/RecruitList'
 import RecruitHeader from 'components/RecruitHeader'
 

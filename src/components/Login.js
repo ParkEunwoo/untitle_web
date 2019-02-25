@@ -1,11 +1,50 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, {
+  Component
+} from 'react';
+import {
+  NavLink
+} from 'react-router-dom';
+import styled from 'styled-components';
+
+const Form = styled.form `
+  display: flex;
+  flex-direction: column;
+  
+`;
+const Submit = styled.button `
+    border-radius: 30px;
+    border: 2px solid #ecf0f1;
+    background-color: rgba(0,0,0,0);
+    cursor: pointer;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    &:focus {
+      outline: none;
+    }
+    
+`;
+
+const Input = styled.input `
+  
+border-radius: 30px;
+border: 2px solid #ecf0f1;
+background-color: rgba(0,0,0,0);
+padding-left: 1em;
+padding-right: 2em;
+padding-top: 0.5em;
+padding-bottom: 0.5em;
+&:focus {
+  outline: none;
+}
+`;
 
 class Login extends Component {
 
   state = {
     id: '',
-    pw:''
+    pw: ''
   }
   handleChange = (e) => {
     this.setState({
@@ -24,69 +63,65 @@ class Login extends Component {
     })
   }
   render() {
-    
-    return (
-      <div className = "contents">
-      
-      <form
-      onSubmit={
+
+    return ( 
+      <div className = "contents" >
+
+      <Form onSubmit = {
         () => {
-            console.log(this.state.id)
+          console.log(this.state.id);
+          console.log(this.state.pw);
         }
-    }
-      ><input type="text" 
-      name="id" 
-      placeholder="ID" 
-      value={this.state.id}
-      onChange={
-        (e)=>{
-            this.setState({
-                id: e.target.value
-            })
+      } >
+      <Input type = "text"
+      name = "id"
+      placeholder = "ID"
+      value = {
+        this.state.id
+      }
+      onChange = {
+        (e) => {
+          this.setState({
+            id: e.target.value
+          })
         }
       }
-      className="loginBox"
-       >
-      </input>
-      </form>
-      <form
-       onSubmit={
-        () => {
-            console.log(this.state.pw)
-        }
-    }>
-      <div><input type="password" 
-      name="password" 
-      placeholder="PASSWORD"
-      value={this.state.pw}
-      onChange={
-        (e)=>{
-            this.setState({
-                pw: e.target.value
-            })
+      className = "loginBox" >
+      </Input> 
+      <Input type = "password"
+      name = "password"
+      placeholder = "PASSWORD"
+      value = {
+        this.state.pw
+      }
+      onChange = {
+        (e) => {
+          this.setState({
+            pw: e.target.value
+          })
         }
       }
-      className="pwBox">
-      </input>
-      
+      className = "pwBox" >
+      </Input>
+
+
+      <NavLink to = "/yena/check" > 아이디찾기 </NavLink>  <NavLink to="/yena / check ">비밀번호 찾기</NavLink> 
+      <NavLink to = "/yena/signup" > 회원가입 </NavLink>
+      <Submit type = "submit"
+      onClick = {
+        () => {
+          console.log(this.state)
+        }
+      } >
+      Log In </Submit>
+
+
+
+      </Form>
+
       </div>
 
 
-      </form>
-      
-      <div><NavLink to="/yena/check">아이디찾기</NavLink>  <NavLink to="/yena/check">비밀번호 찾기</NavLink></div>
-      <div><NavLink to="/yena/signup">회원가입</NavLink></div>
-
-      <button type="submit"
-       onClick={
-        ()=> {
-            console.log(this.state)
-        }
-    }
-      >로그인</button>
-  </div>
-  
-  
     );
   }
 }
