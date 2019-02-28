@@ -82,9 +82,7 @@ class Login extends Component {
             id: e.target.value
           })
         }
-      }
-      className = "loginBox" >
-      </Input> 
+      }/>
       <Input type = "password"
       name = "password"
       placeholder = "PASSWORD"
@@ -97,9 +95,7 @@ class Login extends Component {
             pw: e.target.value
           })
         }
-      }
-      className = "pwBox" >
-      </Input>
+      }/>
       <Link />
       <Submit type = "submit"
       onClick = {
