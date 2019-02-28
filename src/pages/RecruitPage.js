@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import RecruitList from 'components/RecruitList'
-import RecruitHeader from 'components/RecruitHeader'
+import {RecruitList, RecruitHeader} from 'components/Recruitment'
 
 class RecruitPage extends Component {
   

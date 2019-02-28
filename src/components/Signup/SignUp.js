@@ -37,7 +37,6 @@ const Input = styled.input `
 
 class SignUp extends Component {
   state = {
-
     name: '',
     student_number: '',
     id: '',

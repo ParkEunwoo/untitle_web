@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import Header from 'components/Header';
-import WeeklyActivities from 'components/WeeklyActivities';
+import Activity from 'components/Activity';
 
-class ShareActivity extends Component {
+class ActivityPage extends Component {
   render() {
     return (
       <div>
           <Header/>
-          <WeeklyActivities/>
+          <Activity/>
       </div>
     );
   }
 }
 
-export default ShareActivity;
+export default ActivityPage;

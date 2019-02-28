@@ -4,8 +4,8 @@ import { Route,  } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import {
     InputActivity,
-    NoticeBoard,
-    ShareActivity,
+    NoticePage,
+    ActivityPage,
     UpIndex,
     LoginPage,
     SignUpPage,
@@ -55,8 +55,8 @@ const App = () => {
             <Route exact path="/jungmin/register/apply" component={ApplyPage} />
             <Route exact path="/jungmin/register/apply/timetable" component={TimeTablePage} />
             <Route exact path="/sungmin" component={PortFolio} />
-            <Route exact path="/jihye/notice/share/:type/:title/:leader" component={ShareActivity}/>
-            <Route exact path="/jihye/notice" component={NoticeBoard}/>
+            <Route exact path="/jihye/notice/share/:type/:title/:leader" component={ActivityPage}/>
+            <Route exact path="/jihye/notice" component={NoticePage}/>
             <Route exact path="/jihye/:type/:title/:leader" component={InputActivity}/>
         </div>
     );
