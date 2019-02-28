@@ -1,10 +1,8 @@
 import React, {
   Component
 } from 'react';
-import {
-  NavLink
-} from 'react-router-dom';
 import styled from 'styled-components';
+import Link from './Link';
 
 const Form = styled.form `
   display: flex;
@@ -65,7 +63,6 @@ class Login extends Component {
   render() {
 
     return ( 
-      <div className = "contents" >
 
       <Form onSubmit = {
         () => {
@@ -103,10 +100,7 @@ class Login extends Component {
       }
       className = "pwBox" >
       </Input>
-
-
-      <NavLink to = "/yena/check" > 아이디찾기 </NavLink>  <NavLink to="/yena / check ">비밀번호 찾기</NavLink> 
-      <NavLink to = "/yena/signup" > 회원가입 </NavLink>
+      <Link />
       <Submit type = "submit"
       onClick = {
         () => {
@@ -118,10 +112,6 @@ class Login extends Component {
 
 
       </Form>
-
-      </div>
-
-
     );
   }
 }
