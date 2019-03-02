@@ -3,11 +3,9 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Links = styled.div `
-    
     text-align : center;
     background-color: rgba(0,0,0,0);
     cursor: pointer;
-    margin-bottom :2em;
     color: white;
 `;
 
@@ -18,7 +16,7 @@ const Link = () => {
                 <NavLink to = "/yena/check" > 아이디 / </NavLink>
                 <NavLink to="/yena/check">비밀번호 찾기</NavLink> 
                 <div>
-                    <NavLink to = "/yena/signup" > 회원가입 </NavLink>
+                <NavLink to = "/yena/signup" > 회원가입 </NavLink>
                 </div>
                 
             </Links>

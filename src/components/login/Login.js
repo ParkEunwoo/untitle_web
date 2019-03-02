@@ -30,6 +30,7 @@ const Submit = styled.button `
     padding-right: 2em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+    margin-bottom : 1.5em;
     &:focus {
       outline: none;
     }
@@ -114,7 +115,6 @@ class Login extends Component {
           })
         }
       }/>
-      <Link />
       <Submit type = "submit"
       onClick = {
         () => {
@@ -122,6 +122,7 @@ class Login extends Component {
         }
       } >
       Log In </Submit>
+      <Link />
       </Form>
       </Contents>
     );
