@@ -5,11 +5,17 @@ import styled from 'styled-components';
 import Link from './Link';
 
 const Form = styled.form `
+  background-color : #19B3B1; 
   display: flex;
   flex-direction: column;
+  align-items:center;
+  justify-content : center;
   
 `;
 const Submit = styled.button `
+    width : 6%;
+
+    color : #ecf0f1;
     border-radius: 30px;
     border: 2px solid #ecf0f1;
     background-color: rgba(0,0,0,0);
@@ -26,16 +32,21 @@ const Submit = styled.button `
 
 const Input = styled.input `
   
-border-radius: 30px;
-border: 2px solid #ecf0f1;
-background-color: rgba(0,0,0,0);
-padding-left: 1em;
-padding-right: 2em;
-padding-top: 0.5em;
-padding-bottom: 0.5em;
-&:focus {
-  outline: none;
-}
+  margin-bottom : 3em;
+
+  width : 20%;
+  border-radius: 30px;
+  border: 2px solid #ecf0f1;
+  background-color: rgba(255,255,255,100);
+  padding-left: 1em;
+  padding-right: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+ 
+  
+  &:focus {
+    outline: none;
+  }
 `;
 
 class Login extends Component {

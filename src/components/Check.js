@@ -1,4 +1,68 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
+
+const Contents = styled.div `
+  display : flex;
+  flex-direction : row;
+  align-items : flex-start;
+  justify-content : center;
+  background-color : #19B3B1 ;
+`;
+
+const Title = styled.h3 `
+  text-align : center;
+  color : rgba(255,255,255,100);
+`;
+
+const IdCheck = styled.div `
+  display : flex;
+  flex-direction : column;
+  justify-content : center;
+  align-items : center;
+  margin-right:6em;
+`;
+
+const PwCheck = styled.div `
+  display : flex;
+  flex-direction : column;
+  justify-content : center;
+  align-items : center;
+  margin-left:6em;
+`;
+
+const Inputs = styled.input `
+  
+  margin-bottom : 3em;
+  border-radius: 30px;
+  border: 2px solid #ecf0f1;
+  background-color: rgba(255,255,255,100);
+  padding-left: 1em;
+  padding-right: 8em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  &:focus {
+    outline: none;
+  }
+`
+
+const Summit  = styled.button `
+
+  text-align : center;
+  color : #ecf0f1;
+  border-radius: 30px;
+  border: 2px solid #ecf0f1;
+  background-color: rgba(0,0,0,0);
+  cursor: pointer;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  &:focus {
+    outline: none;
+  }
+`;
 
 class Check extends Component {state = {
     
@@ -28,11 +92,11 @@ handleSubmit = (e) => {
 
 render() {
   return (
-    <div className="contents">
-    <div className="id_check">
-            <h3>아이디찾기</h3>
-            <div><span id="i">학번</span> 
-            <input type="text" 
+    <Contents className="contents">
+    <IdCheck className="id_check">
+            <Title>아이디찾기</Title>
+            <div>{/*<span id="i">학번</span>*/ }
+            <Inputs type="text" 
             placeholder="학번" 
             name="id" 
             value={this.state.student_number}
@@ -44,10 +108,10 @@ render() {
               }
             }
             className="inputs" 
-            id="ID"></input>
+            id="ID"></Inputs>
             </div>
-            <div><span>이름</span>
-             <input type="text" name="name"
+            <div>{/*<span>이름</span>*/}
+             <Inputs type="text" name="name"
               placeholder="이름" 
               value={this.state.name}
               onChange={
@@ -60,18 +124,18 @@ render() {
 
               className="inputs" 
               id="name">
-              </input></div>
-            <button type="submit" 
+              </Inputs></div>
+            <Summit type="submit" 
             onClick={
               ()=> {
                   console.log(this.state)
               }
-          }>아이디 찾기</button>
-    </div>
-    <div className="pw_check">
-            <h3>비밀번호 찾기</h3>
-            <div><span id="i">학번</span> 
-            <input type="text" 
+          }>ID 찾기</Summit>
+    </IdCheck>
+    <PwCheck className="pw_check">
+            <Title>비밀번호 찾기</Title>
+            <div>{/*<span id="i">학번</span> */}
+            <Inputs type="text" 
             placeholder="학번" 
             name="id" 
             value={this.state.student_number_p}
@@ -83,11 +147,11 @@ render() {
               }
             }
             className="inputs" 
-            id="ID"></input>
+            id="ID"></Inputs>
             </div>
             
-            <div><span>이름</span>
-             <input type="text" name="name"
+            <div>{/*<span>이름</span>*/}
+             <Inputs type="text" name="name"
               placeholder="이름" 
               value={this.state.name_p}
               onChange={
@@ -100,10 +164,10 @@ render() {
 
               className="inputs" 
               id="name">
-              </input></div>
+              </Inputs></div>
 
-            <div><span id="i">ID</span> 
-            <input type="text"
+            <div>{/*<span id="i">ID</span> */}
+            <Inputs type="text"
              name="id"
               placeholder="ID"
               value={this.state.id_p}
@@ -116,16 +180,16 @@ render() {
               }
                className="inputs"
 
-                id="ID"></input>
+                id="ID"></Inputs>
                 </div>
-            <button type="submit" 
+            <Summit type="submit" 
             onClick={
               ()=> {
                   console.log(this.state)
               }
-          } >비밀번호 찾기</button>  
-    </div>
-    </div>
+          } >PW 찾기</Summit>  
+    </PwCheck>
+    </Contents>
   );
 }
 }

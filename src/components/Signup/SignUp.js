@@ -6,9 +6,12 @@ import styled from 'styled-components';
 const Form = styled.form `
     display: flex;
     flex-direction: column;
+    align-items:center;
+    justify-content : center;
 `;
 
 const Submit = styled.button `
+    font-size : 1em;
     border-radius: 30px;
     border: 2px solid #ecf0f1;
     background-color: rgba(0,0,0,0);
@@ -23,13 +26,15 @@ const Submit = styled.button `
 `;
 
 const Input = styled.input `
+    width : 20%;
     border-radius: 30px;
     border: 2px solid #ecf0f1;
     background-color: rgba(0,0,0,0);
     padding-left: 1em;
     padding-right: 2em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom : 2em;
     &:focus {
       outline: none;
     }
@@ -150,7 +155,7 @@ class SignUp extends Component {
       </Input> 
       <Input type = "password"
       name = "checkPw"
-      placeholder = "PW"
+      placeholder = "PW확인"
       value = {
         this.state.pw_check
       }
@@ -189,7 +194,7 @@ class SignUp extends Component {
         () => {
           console.log(this.state)
         }
-      } > 등록 </Submit> 
+      } > SIGN UP </Submit> 
       </Form >
        </div>
 
