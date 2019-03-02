@@ -2,6 +2,11 @@ import React, {
   Component
 } from 'react';
 import styled from 'styled-components';
+const Contents = styled.div `
+  background-color: #19B3B1 ;
+  color: rgba(255,255,255,100);
+  text-align: center;
+`;
 
 const Form = styled.form `
     display: flex;
@@ -15,6 +20,7 @@ const Submit = styled.button `
     border-radius: 30px;
     border: 2px solid #ecf0f1;
     background-color: rgba(0,0,0,0);
+    color : rgba(255,255,255,100);
     cursor: pointer;
     padding-left: 2em;
     padding-right: 2em;
@@ -26,15 +32,15 @@ const Submit = styled.button `
 `;
 
 const Input = styled.input `
-    width : 20%;
+    
     border-radius: 30px;
     border: 2px solid #ecf0f1;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(255,255,255,100);
     padding-left: 1em;
-    padding-right: 2em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    margin-bottom : 2em;
+    padding-right: 10em;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+    margin-bottom : 1.5em;
     &:focus {
       outline: none;
     }
@@ -73,8 +79,9 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div className = "contents" >
-
+      <Contents className = "contents" >
+      <h1>UNTITLE</h1>
+      <h2>Create an Account</h2>
       <Form onSubmit = {
         () => {
           console.log(this.state.name);
@@ -85,7 +92,7 @@ class SignUp extends Component {
           console.log(this.state.phone);
         }
       } >
-      <label > NAME </label>
+      {/*<label > NAME </label>*/}
       <Input type = "text"
       name = "name"
       placeholder = "이름"
@@ -102,7 +109,7 @@ class SignUp extends Component {
       className = "inputs"
       id = "name" >
       </Input>
-      <label > STUDENT NUMBER </label> 
+      {/*<label > STUDENT NUMBER </label>*/ }
       <Input type = "text"
       name = "name"
       placeholder = "학번"
@@ -119,7 +126,7 @@ class SignUp extends Component {
       className = "inputs"
       id = "name" >
       </Input> 
-      <label > ID </label> 
+      {/*<label > ID </label> */}
       <Input type = "text"
       name = "id"
       placeholder = "ID"
@@ -136,10 +143,10 @@ class SignUp extends Component {
       className = "inputs"
       id = "ID" >
       </Input>
-       <label > PASSWORD </label>  
-       <Input type = "password"
+      {/*<label > PASSWORD </label>*/}  
+      <Input type = "password"
       name = "pw"
-      placeholder = "PW"
+      placeholder = "PASSWORD"
       value = {
         this.state.pw
       }
@@ -155,7 +162,7 @@ class SignUp extends Component {
       </Input> 
       <Input type = "password"
       name = "checkPw"
-      placeholder = "PW확인"
+      placeholder = "PASSWORD 확인"
       value = {
         this.state.pw_check
       }
@@ -169,10 +176,10 @@ class SignUp extends Component {
       className = "inputs"
       id = "PW_check" >
       </Input> 
-      <label > PHONE NUMBER </label> 
+      {/*<label > PHONE NUMBER </label>*/} 
        <Input type = "text"
       name = "id"
-      placeholder = "000-0000-0000"
+      placeholder = "전화번호"
       value = {
         this.state.phone
       }
@@ -196,7 +203,7 @@ class SignUp extends Component {
         }
       } > SIGN UP </Submit> 
       </Form >
-       </div>
+      </Contents>
 
 
     );

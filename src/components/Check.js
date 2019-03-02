@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-
 const Contents = styled.div `
+  display : flex;
+  flex-direction : column;
+  color : rgba(255,255,255,100);
+  text-align : center;
+  background-color : #19B3B1 ;
+`;
+
+const Contents2 = styled.div `
   display : flex;
   flex-direction : row;
   align-items : flex-start;
@@ -10,7 +17,7 @@ const Contents = styled.div `
   background-color : #19B3B1 ;
 `;
 
-const Title = styled.h3 `
+const Title2 = styled.h3 `
   text-align : center;
   color : rgba(255,255,255,100);
 `;
@@ -92,9 +99,11 @@ handleSubmit = (e) => {
 
 render() {
   return (
-    <Contents className="contents">
+    <Contents>
+    <h1>UNTITLE</h1>
+    <Contents2 className="contents">
     <IdCheck className="id_check">
-            <Title>아이디찾기</Title>
+            <Title2>아이디찾기</Title2>
             <div>{/*<span id="i">학번</span>*/ }
             <Inputs type="text" 
             placeholder="학번" 
@@ -133,7 +142,7 @@ render() {
           }>ID 찾기</Summit>
     </IdCheck>
     <PwCheck className="pw_check">
-            <Title>비밀번호 찾기</Title>
+            <Title2>비밀번호 찾기</Title2>
             <div>{/*<span id="i">학번</span> */}
             <Inputs type="text" 
             placeholder="학번" 
@@ -189,6 +198,7 @@ render() {
               }
           } >PW 찾기</Summit>  
     </PwCheck>
+    </Contents2>
     </Contents>
   );
 }

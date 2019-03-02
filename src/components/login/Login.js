@@ -4,6 +4,12 @@ import React, {
 import styled from 'styled-components';
 import Link from './Link';
 
+const Contents = styled.div `
+  background-color : #19B3B1; 
+  color : rgba(255,255,255,100);
+  text-align : center;
+`;
+
 const Form = styled.form `
   background-color : #19B3B1; 
   display: flex;
@@ -74,7 +80,8 @@ class Login extends Component {
   render() {
 
     return ( 
-
+      <Contents className = "contents">
+      <h1>UNTITLE</h1>
       <Form onSubmit = {
         () => {
           console.log(this.state.id);
@@ -115,10 +122,8 @@ class Login extends Component {
         }
       } >
       Log In </Submit>
-
-
-
       </Form>
+      </Contents>
     );
   }
 }
