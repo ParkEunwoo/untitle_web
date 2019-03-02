@@ -8,35 +8,26 @@ class RegisterForm extends Component{
     explain: '',
     startDate: '',
     endDate: '',
-    recruitNum: '',
+    recruitNum: 2,
     joinNum: 1
   }
 
   handleChange = (e) => {
-    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+    const value = e.target.value;
     this.setState({
       [e.target.name]: value
     });
   }
   handleSubmit = (e) => {
     e.preventDefault();
+    console.log(this.state);
     this.props.onCreate(this.state);
-    this.setState({
-      type: '',
-      title: '',
-      leader: '',
-      explain: '',
-      startDate: '',
-      endDate: '',
-      recruitNum: '',
-      joinNum: 1
-    })
   }
   
   render(){
     return (
       <form onSubmit= {this.handleSubmit}>
-        <label>과목명</label><input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
+        <label>과목명</label><input type="text" name="title" onChange={this.handleChange}/>
         
         <div>
         <input type="checkbox" name="type" value="멘토링" checked= {this.state.type==="멘토링"} onChange= {this.handleChange}/><label>멘토링</label>
@@ -45,13 +36,13 @@ class RegisterForm extends Component{
         </div>
         
         <div>활동기간 
-        <input type="date" name="rsday" value={this.state.rsDate} onChange= {this.handleChange}/> ~ 
-        <input type="date" name="reday" value={this.state.reDate} onChange= {this.handleChange}/></div>
+        <input type="date" name="startDate"onChange= {this.handleChange}/> ~ 
+        <input type="date" name="endDate" onChange= {this.handleChange}/></div>
         
-        <div>모집인원 <input type="number" name="rNum" value = {this.state.rNum} onChange={this.handleChange}/></div>
+        <div>모집인원 <input type="number" name="recruitNum" onChange={this.handleChange}/></div>
         
         <div>수업내용 
-        <textarea name = "explain" value={this.state.explain} onChange={this.handleChange}></textarea></div>
+        <textarea name = "explain" onChange={this.handleChange}></textarea></div>
         
         <div>수업가능 시간 입력<input/></div>
         
