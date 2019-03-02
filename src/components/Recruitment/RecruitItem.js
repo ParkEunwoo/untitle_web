@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
  
 class RecruitItem extends Component {    
     render() {
       return (
-        <div className = "recruitList"> <NavLink to="/recruit/apply"></NavLink>{/*상자를 클릭하면 신청페이지 주소로*/} 
+        <div className = "recruitList">
             <div className = "kind">{this.props.type}</div>
             <div className = "name">
                 <h2>{/*과목명*/}{this.props.title}</h2>

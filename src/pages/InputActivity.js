@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Header from 'components/Header';
 import InputForm from 'components/InputForm';
 
@@ -6,10 +6,10 @@ import InputForm from 'components/InputForm';
 class InputActivity extends Component {
   render() {
     return (
-      <div>
-        <Header/>
+      <Fragment>
+        <Header title="과목명" sub="팀장명"/>
         <InputForm/>
-      </div>
+      </Fragment>
     );
   }
 }

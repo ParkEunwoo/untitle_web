@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RecruitItem from './RecruitItem';
+import {NavLink} from 'react-router-dom';
 
 const recruit = [
   {
@@ -48,7 +49,7 @@ class RecruitList extends Component {
     
     return (
       <div>
-        {recruitment}
+        <NavLink to="/recruit/apply">{recruitment}</NavLink>
       </div>
     );
   }

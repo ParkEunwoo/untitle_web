@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import 'components/PortFolio.css';
+import Header from 'components/Header';
 import { CollectionNav, CollectionList } from 'components/PortFolio';
 
 class PortFolio extends Component {
   render() {
     return (
-    <div className="content">
-      <div className="submenu">
+      <Fragment>
+        <Header title="PORTFOLIO" />
         <CollectionNav/>
-      </div>
-      <div className="grid-container">
         <CollectionList/>
-      </div>
-    </div>
+      </Fragment>
     );
   }
 }

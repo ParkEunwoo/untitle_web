@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
-import {RecruitList, RecruitHeader} from 'components/Recruitment'
+import React, { Component, Fragment } from 'react';
+import RecruitList from 'components/Recruitment';
+import Header from 'components/Header';
 
 class RecruitPage extends Component {
   
   render() {
     return (
-      <div>
-        <RecruitHeader />
+      <Fragment>
+        <Header title="RECRUITMENT" register="등록" />
         <RecruitList />
-      </div>
+      </Fragment>
     );
   }
 }
