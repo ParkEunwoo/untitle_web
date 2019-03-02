@@ -6,7 +6,7 @@ class RecruitHeader extends Component {
         return(
             <div className = "recruitHeader">
                 <h1>RECRUITMENT</h1>
-                <button><NavLink to="/jungmin/register">등록</NavLink></button>
+                <button><NavLink to="/recruit/register">등록</NavLink></button>
             </div>
         );
     }
