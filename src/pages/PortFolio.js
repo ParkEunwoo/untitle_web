@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import 'components/PortFolio.css';
-import CollectionList from 'components/CollectionList'
-import CollectionNav from 'components/CollectionNav'
+import { CollectionNav, CollectionList } from 'components/PortFolio';
 
 class PortFolio extends Component {
   render() {
