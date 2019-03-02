@@ -19,7 +19,6 @@ const Form = styled.form `
   
 `;
 const Submit = styled.button `
-    width : 6%;
     color : #ecf0f1;
     border-radius: 30px;
     border: 2px solid #ecf0f1;
