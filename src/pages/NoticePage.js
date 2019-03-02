@@ -7,7 +7,7 @@ class NoticePage extends Component {
   render() {
     return (
       <div>
-        <Header/>
+        <Header title="게시판"/>
         <Notice/>
       </div>
     );

@@ -6,7 +6,7 @@ class ActivityPage extends Component {
   render() {
     return (
       <div>
-          <Header/>
+          <Header title="과목명" sub="팀장명" register="글쓰기"/>
           <Activity/>
       </div>
     );

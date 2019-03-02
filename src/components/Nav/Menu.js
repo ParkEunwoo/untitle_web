@@ -23,7 +23,7 @@ const Item = styled.li`
 const Menu = ({isSession}) => {
     return(
         <List>
-            <Item><Logo src={logo} alt={"logo"} /></Item>
+            <Item><NavLink to="/" ><Logo src={logo} alt={"logo"} /></NavLink></Item>
             <Item><NavLink to="/activity">ACTIVITY</NavLink></Item>
             <Item><NavLink to="/recruit">RECRUIT</NavLink></Item>
             <Item><NavLink to="/portfolio">PORTFOLIO</NavLink></Item>
