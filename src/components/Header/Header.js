@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Contents = styled.div `
     background-color: #19B3B1;
@@ -30,7 +31,7 @@ const Header = (props) => {
         <Contents>
             <h1>{props.title}</h1>
             {!!props.sub && <h2>{props.sub}</h2>}
-            {!!props.register && <Button>{props.register}</Button>}
+            {!!props.register && <Button><Link to={props.link}>{props.register}</Link></Button>}
         </Contents>
     )
 }

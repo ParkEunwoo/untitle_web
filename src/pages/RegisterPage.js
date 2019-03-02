@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Register from 'components/Recruitment/Register';
+import Header from 'components/Header';
 
 const RegisterPage = () => {
     return(
-        <Register />
+        <Fragment>
+            <Header title="등록하기"/>
+            <Register />
+        </Fragment>
     );
 };
 

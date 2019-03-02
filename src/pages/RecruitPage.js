@@ -7,7 +7,7 @@ class RecruitPage extends Component {
   render() {
     return (
       <Fragment>
-        <Header title="RECRUITMENT" register="등록" />
+        <Header title="RECRUITMENT" register="등록" link="/recruit/register"/>
         <RecruitList />
       </Fragment>
     );

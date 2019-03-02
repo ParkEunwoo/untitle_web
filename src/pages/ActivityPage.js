@@ -6,7 +6,7 @@ class ActivityPage extends Component {
   render() {
     return (
       <Fragment>
-          <Header title="과목명" sub="팀장명" register="글쓰기"/>
+          <Header title="과목명" sub="팀장명" register="글쓰기" link="/activity/register"/>
           <Activity/>
       </Fragment>
     );
