@@ -66,7 +66,7 @@ class InputForm extends Component {
                             console.log(this.state.title)
                             console.log(this.state.text)
                         }
-                    }><NavLink to="/jihye/notice">저장</NavLink></button>
+                    }><NavLink to="/activity">저장</NavLink></button>
                 </form>
             </div>
         );

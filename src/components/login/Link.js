@@ -15,10 +15,9 @@ const Link = () => {
     return (
         <div>
             <Links>
-                <NavLink to = "/yena/check" > 아이디 / </NavLink>
-                <NavLink to="/yena/check">비밀번호 찾기</NavLink> 
+                <NavLink to = "/check" > 아이디 / 비밀번호 찾기</NavLink> 
                 <div>
-                    <NavLink to = "/yena/signup" > 회원가입 </NavLink>
+                    <NavLink to = "/signup" > 회원가입 </NavLink>
                 </div>
                 
             </Links>
