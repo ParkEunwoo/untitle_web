@@ -27,7 +27,7 @@ const activity = [
 
 class NoticeList extends Component {
     render() {
-        const noticeboard = activity.map(activity=><NoticeItem key = {activity.id} type={activity.type} title={activity.title} leader={activity.leader}/>)
+        const noticeboard = activity.map(activity=><NoticeItem key = {activity.id} id = {activity.id} type={activity.type} title={activity.title} leader={activity.leader}/>)
         return (
             <div>
                 {noticeboard}

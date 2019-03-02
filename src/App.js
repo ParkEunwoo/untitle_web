@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu from './components/Menu';
+import Nav from 'components/Nav';
 import { Route  } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import {
@@ -44,20 +44,20 @@ const App = () => {
     return (
         <div>
             <GlobalStyle />
-            <Menu />
-            <Route path="/yena" component={UpIndex}/>
-            <Route exact path="/yena/login" component={LoginPage} />
-            <Route exact path="/yena/signup" component={SignUpPage} />
-            <Route exact path="/yena/check" component={CheckPage} /> 
-            <Route exact path="/junsik" component={MyPage} />
-            <Route exact path="/jungmin" component={RecruitPage} />
-            <Route exact path="/jungmin/register" component={RegisterPage} />
-            <Route exact path="/jungmin/register/apply" component={ApplyPage} />
-            <Route exact path="/jungmin/register/apply/timetable" component={TimeTablePage} />
-            <Route exact path="/sungmin" component={PortFolio} />
-            <Route exact path="/jihye/notice/share/:type/:title/:leader" component={ActivityPage}/>
-            <Route exact path="/jihye/notice" component={NoticePage}/>
-            <Route exact path="/jihye/:type/:title/:leader" component={InputActivity}/>
+            <Nav isSession={false}/>
+            <Route path="/" component={UpIndex}/>
+            <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/signup" component={SignUpPage} />
+            <Route exact path="/login/check" component={CheckPage} /> 
+            <Route exact path="/mypage" component={MyPage} />
+            <Route exact path="/recruit" component={RecruitPage} />
+            <Route exact path="/recruit/register" component={RegisterPage} />
+            <Route exact path="/recruit/register/apply" component={ApplyPage} />
+            <Route exact path="/recruit/register/apply/timetable" component={TimeTablePage} />
+            <Route exact path="/portfolio" component={PortFolio} />
+            <Route exact path="/activity/:id/notice" component={ActivityPage}/>
+            <Route exact path="/activity" component={NoticePage}/>
+            <Route exact path="/activity/register" component={InputActivity}/>
         </div>
     );
 };

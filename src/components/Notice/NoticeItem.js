@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 class NoticeItem extends Component {
     
     render() {
-        const link = `/jihye/notice/share/${this.props.type}/${this.props.title}/${this.props.leader}`;
+        const link = `/activity/${this.props.id}/notice`;
         return (
             <div>
             <NavLink to={link}>
