@@ -21,7 +21,7 @@ class Apply extends Component{
           <div>
               <h2>{/*과목명*/}{this.props.title}</h2>
               <h3>{/*팀장명*/}{this.props.leader}</h3>
-              <button type= "submit" value = "apply_submit" onClick={this.joinNumPlus}>><NavLink to="/jungmin/recruit">신청</NavLink></button>
+              <button type= "submit" value = "apply_submit" onClick={this.joinNumPlus}>><NavLink to="/recruit/apply">신청</NavLink></button>
           </div>
           <div>{/*수업내용 요약*/}</div>
           <div>활동기간 {this.props.asDate} ~ {this.props.aeDate} </div>
@@ -38,7 +38,7 @@ class Apply extends Component{
                 <button>수정</button>
               </p>
               <p>
-                <NavLink to="/jungmin/timetable">내 시간표</NavLink>
+                <NavLink to="/recruit/apply/timetable">내 시간표</NavLink>
               </p>
             </div>
             </form>
