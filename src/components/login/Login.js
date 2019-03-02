@@ -19,6 +19,10 @@ const Form = styled.form `
   
 `;
 const Submit = styled.button `
+<<<<<<< HEAD
+=======
+    width : 6%;
+>>>>>>> 02c72792b6f7287267901f8808f33d3a5908e077
     color : #ecf0f1;
     border-radius: 30px;
     border: 2px solid #ecf0f1;
