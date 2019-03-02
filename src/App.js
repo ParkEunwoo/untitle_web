@@ -22,7 +22,14 @@ const GlobalStyle = createGlobalStyle`
     @import url("//fonts.googleapis.com/css?family=Nanum+Gothic");
     @import url("//fonts.googleapis.com/css?family=Roboto");
 
+    html,body {
+        height : 100%;
+        margin: 0;
+    }
+
     body {
+
+        height : 100%;
         margin: 0;
         box-sizing: border-box;
         font-family: "Roboto", sans-serif;
