@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import NoticeList from 'components/NoticeList';
+import Notice from 'components/Notice';
 import Header from 'components/Header';
 
-class NoticeBoard extends Component {
+class NoticePage extends Component {
 
   render() {
     return (
       <div>
         <Header/>
-        <NoticeList/>
+        <Notice/>
       </div>
     );
   }
 }
 
-export default NoticeBoard;
+export default NoticePage;
