@@ -4,21 +4,21 @@ import NoticeItem from './NoticeItem';
 const activity = [
     {
         id : 0,
-        type : '멘토링',
-        title : '과목이름',
-        leader : '팀장이름'
+        type : '멘토링1',
+        title : '과목이름1',
+        leader : '팀장이름1'
     },
     {
         id : 1,
-        type : '멘토링',
-        title : '과목이름',
-        leader : '팀장이름'
+        type : '멘토링2',
+        title : '과목이름2',
+        leader : '팀장이름2'
     },
     {
         id : 2,
-        type : '멘토링',
-        title : '과목이름',
-        leader : '팀장이름'
+        type : '멘토링3',
+        title : '과목이름3',
+        leader : '팀장이름3'
     }
 ];
 

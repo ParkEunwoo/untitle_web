@@ -1,6 +1,6 @@
 export { default as InputActivity } from './InputActivity';
-export { default as NoticeBoard } from './NoticeBoard';
-export { default as ShareActivity } from './ShareActivity';
+export { default as NoticePage } from './NoticePage';
+export { default as ActivityPage } from './ActivityPage';
 export { default as UpIndex } from './UpIndex';
 export { default as LoginPage } from './LoginPage';
 export { default as SignUpPage } from './SignUpPage';
@@ -10,3 +10,4 @@ export { default as PortFolio } from './PortFolio';
 export { default as RecruitPage } from './RecruitPage';
 export { default as ApplyPage } from './ApplyPage';
 export { default as TimeTablePage } from './TimeTablePage';
+export { default as RegisterPage } from './RegisterPage';
