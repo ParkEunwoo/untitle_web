@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Header from 'components/Header';
-import InputForm from 'components/InputForm';
+import InputForm from 'components/Activity/Register';
 
 
 class InputActivity extends Component {

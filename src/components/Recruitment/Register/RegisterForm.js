@@ -2,20 +2,14 @@ import React, { Component } from 'react';
 
 class RegisterForm extends Component{
   state = {
+    type: '',
     title: '',
-    type: {
-      mentor:'true',
-      study: 'false',
-      project:'false' 
-    },
     leader: '',
     explain: '',
-    rsDate: '',
-    reDate: '',
-    asDate: '',
-    aeDate: '',
-    rNum: '',
-    jNum: 0
+    startDate: '',
+    endDate: '',
+    recruitNum: '',
+    joinNum: 1
   }
 
   handleChange = (e) => {
@@ -28,41 +22,31 @@ class RegisterForm extends Component{
     e.preventDefault();
     this.props.onCreate(this.state);
     this.setState({
+      type: '',
       title: '',
-      type: {
-        mentor:'true',
-        study: 'false',
-        project:'false' 
-      },
       leader: '',
       explain: '',
-      rsDate: '',
-      reDate: '',
-      asDate: '',
-      aeDate: '',
-      rNum: '',
-      jNum: 0
+      startDate: '',
+      endDate: '',
+      recruitNum: '',
+      joinNum: 1
     })
   }
   
   render(){
     return (
       <form onSubmit= {this.handleSubmit}>
-        <div>과목명 <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/></div>
+        <label>과목명</label><input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
         
         <div>
-        <input type="checkbox" name="type" value="멘토링" checked= {this.state.type['mentor']} onChange= {this.handleChange}/>멘토링
-        <input type="checkbox" name="type" value="스터디" checked= {this.state.type['study']} onChange= {this.handleChange}/>스터디 
-        <input type="checkbox" name="type" value="프로젝트" checked= {this.state.type['project']} onChange= {this.handleChange}/>프로젝트 
+        <input type="checkbox" name="type" value="멘토링" checked= {this.state.type==="멘토링"} onChange= {this.handleChange}/><label>멘토링</label>
+        <input type="checkbox" name="type" value="스터디" checked= {this.state.type==="스터디"} onChange= {this.handleChange}/><label>스터디</label>
+        <input type="checkbox" name="type" value="프로젝트" checked= {this.state.type==="프로젝트"} onChange= {this.handleChange}/><label>프로젝트</label>
         </div>
         
         <div>활동기간 
         <input type="date" name="rsday" value={this.state.rsDate} onChange= {this.handleChange}/> ~ 
         <input type="date" name="reday" value={this.state.reDate} onChange= {this.handleChange}/></div>
-        
-        <div>모집기간 
-        <input type="date" name="asday" value={this.state.asDate} onChange= {this.handleChange}/> ~ 
-        <input type="date" name="aeday" value={this.state.rsDate} onChange= {this.handleChange}/></div>
         
         <div>모집인원 <input type="number" name="rNum" value = {this.state.rNum} onChange={this.handleChange}/></div>
         

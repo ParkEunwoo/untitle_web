@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Notice from 'components/Notice';
+import Notice from 'components/Activity/Notice';
 import Header from 'components/Header';
 
 class NoticePage extends Component {
