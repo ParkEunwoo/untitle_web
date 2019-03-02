@@ -19,13 +19,13 @@ import {
 } from 'pages';
 
 const GlobalStyle = createGlobalStyle`
-    @import url("//fonts.googleapis.com/earlyaccess/notosanskr.css");
-    @import url("//cdn.jsdelivr.net/gh/velopert/font-d2coding@1.2.1/d2coding.css");
+    @import url("//fonts.googleapis.com/css?family=Nanum+Gothic");
+    @import url("//fonts.googleapis.com/css?family=Roboto");
 
     body {
         margin: 0;
         box-sizing: border-box;
-        font-family: "Noto Sans KR", sans-serif;
+        font-family: "Roboto", sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
