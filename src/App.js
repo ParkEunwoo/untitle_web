@@ -1,6 +1,6 @@
 import React from 'react';
 import Menu from './components/Menu';
-import { Route,  } from 'react-router-dom';
+import { Route  } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import {
     InputActivity,
