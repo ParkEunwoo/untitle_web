@@ -26,7 +26,6 @@ const Explain = () => {
             <Rect src={rect} alt="상자" />
             <Text src={text} alt="글로벌미디어학부 알고리즘 소모임" />
         </Div>
-
     );
 }
 export default Explain;

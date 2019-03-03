@@ -1,7 +1,9 @@
 import React, {
   Component
 } from 'react';
+import { get } from 'axios';
 import styled from 'styled-components';
+import { withRouter } from "react-router-dom";
 import Link from './Link';
 
 const Contents = styled.div `
@@ -59,73 +61,46 @@ class Login extends Component {
 
   state = {
     id: '',
-    pw: ''
+    password: ''
   }
   handleChange = (e) => {
     this.setState({
-      id: e.target.value
+      [e.target.name]: e.target.value
     })
   }
+
+  loginUser = () => {
+    const {id, password} = this.state;
+    const url = `/api/users/login/${id}/${password}`;
+
+    return get(url);
+
+  }
+
   handleSubmit = (e) => {
-    // 페이지 리로딩 방지
     e.preventDefault();
-    // 상태값을 onCreate 를 통하여 부모에게 전달
-    this.props.onCreate(this.state);
-    // 상태 초기화
-    this.setState({
-      id: '',
-      pw: ''
-    })
+    this.loginUser()
+      .then((response) => {
+        if(response.data.success){
+          this.props.history.push("/");
+        }
+      });
   }
+
   render() {
 
     return ( 
       <Contents>
         <h1>UNTITLE</h1>
-        <Form onSubmit = {
-        () => {
-          console.log(this.state.id);
-          console.log(this.state.pw);
-        }
-        } >
-      <Input type = "text"
-      name = "id"
-      placeholder = "ID"
-      value = {
-        this.state.id
-      }
-      onChange = {
-        (e) => {
-          this.setState({
-            id: e.target.value
-          })
-        }
-      }/>
-      <Input type = "password"
-      name = "password"
-      placeholder = "PASSWORD"
-      value = {
-        this.state.pw
-      }
-      onChange = {
-        (e) => {
-          this.setState({
-            pw: e.target.value
-          })
-        }
-      }/>
-      <Submit type = "submit"
-      onClick = {
-        () => {
-          console.log(this.state)
-        }
-      } >
-      Log In </Submit>
-      <Link />
-      </Form>
+        <Form onSubmit = {this.handleSubmit} >
+          <Input type = "text" name = "id" placeholder = "ID" value = {this.state.id} onChange = {this.handleChange} />
+          <Input type = "password" name = "password" placeholder = "PASSWORD" value = {this.state.password} onChange = {this.handleChange} />
+          <Submit type = "submit">Log In </Submit>
+          <Link />
+        </Form>
       </Contents>
     );
   }
 }
 
-export default Login;
+export default withRouter(Login);

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import logo from 'lib/logo.png';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
+import { get } from 'axios';
 
 const Logo = styled.img`
     height: 50px;
@@ -23,18 +24,32 @@ const Item = styled.li`
     &:nth-child(1){
         margin-right:auto;
     }
+    cursor:pointer;
 `;
 
-const Menu = ({isSession}) => {
+
+class Menu extends Component {
+    handleLogout = () => {
+    get('/api/users/logout').then((response) => {
+        this.props.history.push("/");
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+
+}
+    render(){
     return(
         <List>
             <Item><NavLink to="/" ><Logo src={logo} alt={"logo"} /></NavLink></Item>
             <Item><NavLink to="/activity">ACTIVITY</NavLink></Item>
             <Item><NavLink to="/recruit">RECRUIT</NavLink></Item>
             <Item><NavLink to="/portfolio">PORTFOLIO</NavLink></Item>
-            <Item>{isSession ? <NavLink to="/mypage">MYPAGE</NavLink> : <NavLink to="/login">LOGIN</NavLink>}</Item>
+            {this.props.isSession && <Item><NavLink to="/mypage">MYPAGE</NavLink></Item>}
+            <Item>{this.props.isSession ? <span onClick={this.handleLogout}>LOGOUT</span> : <NavLink to="/login">LOGIN</NavLink>}</Item>
         </List>
     );
+    }
 };
 
-export default Menu;
+export default withRouter(Menu);

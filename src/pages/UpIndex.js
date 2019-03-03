@@ -3,9 +3,7 @@ import Index from 'components/UpIndex';
 
 const UpIndex = () => {
     return (
-        <div>
-            <Index />
-        </div>
+        <Index />
     );
 }
 

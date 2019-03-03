@@ -1,7 +1,10 @@
 import React, {
   Component
 } from 'react';
+import { post } from 'axios';
 import styled from 'styled-components';
+import { withRouter } from 'react-router-dom';
+
 const Contents = styled.div `
   background-color: #19B3B1 ;
   color: rgba(255,255,255,100);
@@ -49,32 +52,33 @@ const Input = styled.input `
 class SignUp extends Component {
   state = {
     name: '',
-    student_number: '',
+    number: '',
     id: '',
-    pw: '',
+    password: '',
     pw_check: '',
     phone: ''
-
   }
+
   handleChange = (e) => {
     this.setState({
-      id: e.target.value
+      [e.target.name]: e.target.value
     })
   }
+
+  signUpUser = () => {
+    const url = '/api/users/signup';
+    const {name, number, id, password, phone} = this.state;
+
+    return post(url, {name, number, id, password, phone});
+  }
+
   handleSubmit = (e) => {
-    // 페이지 리로딩 방지
     e.preventDefault();
-    // 상태값을 onCreate 를 통하여 부모에게 전달
-    this.props.onCreate(this.state);
-    // 상태 초기화
-    this.setState({
-      name: '',
-      student_number: '',
-      id: '',
-      pw: '',
-      pw_check: '',
-      phone: ''
-    })
+    this.signUpUser()
+      .then((response) => {
+        console.log(response.data);
+        this.props.history.push('/login');
+      });
   }
 
   render() {
@@ -82,126 +86,14 @@ class SignUp extends Component {
       <Contents className = "contents" >
       <h1>UNTITLE</h1>
       <h2>Create an Account</h2>
-      <Form onSubmit = {
-        () => {
-          console.log(this.state.name);
-          console.log(this.state.student_number);
-          console.log(this.state.id);
-          console.log(this.state.pw);
-          console.log(this.state.pw_check);
-          console.log(this.state.phone);
-        }
-      } >
-      {/*<label > NAME </label>*/}
-      <Input type = "text"
-      name = "name"
-      placeholder = "이름"
-      value = {
-        this.state.name
-      }
-      onChange = {
-        (e) => {
-          this.setState({
-            name: e.target.value
-          })
-        }
-      }
-      className = "inputs"
-      id = "name" >
-      </Input>
-      {/*<label > STUDENT NUMBER </label>*/ }
-      <Input type = "text"
-      name = "name"
-      placeholder = "학번"
-      value = {
-        this.state.student_number
-      }
-      onChange = {
-        (e) => {
-          this.setState({
-            student_number: e.target.value
-          })
-        }
-      }
-      className = "inputs"
-      id = "name" >
-      </Input> 
-      {/*<label > ID </label> */}
-      <Input type = "text"
-      name = "id"
-      placeholder = "ID"
-      value = {
-        this.state.id
-      }
-      onChange = {
-        (e) => {
-          this.setState({
-            id: e.target.value
-          })
-        }
-      }
-      className = "inputs"
-      id = "ID" >
-      </Input>
-      {/*<label > PASSWORD </label>*/}  
-      <Input type = "password"
-      name = "pw"
-      placeholder = "PASSWORD"
-      value = {
-        this.state.pw
-      }
-      onChange = {
-        (e) => {
-          this.setState({
-            pw: e.target.value
-          })
-        }
-      }
-      className = "inputs"
-      id = "PW" >
-      </Input> 
-      <Input type = "password"
-      name = "checkPw"
-      placeholder = "PASSWORD 확인"
-      value = {
-        this.state.pw_check
-      }
-      onChange = {
-        (e) => {
-          this.setState({
-            pw_check: e.target.value
-          })
-        }
-      }
-      className = "inputs"
-      id = "PW_check" >
-      </Input> 
-      {/*<label > PHONE NUMBER </label>*/} 
-       <Input type = "text"
-      name = "id"
-      placeholder = "전화번호"
-      value = {
-        this.state.phone
-      }
-      onChange = {
-        (e) => {
-          this.setState({
-            phone: e.target.value
-          })
-        }
-      }
-      className = "inputs"
-      id = "phone" >
-      </Input>
-
-
-
-      <Submit type = "submit"
-      onClick = {
-        () => {
-          console.log(this.state)
-        }
-      } > SIGN UP </Submit> 
+      <Form onSubmit = {this.handleSubmit} >
+      <Input type = "text" name = "name" placeholder = "이름" value = {this.state.name} onChange = {this.handleChange} />
+      <Input type = "text" name = "number" placeholder = "학번" value = {this.state.number} onChange = {this.handleChange} />
+      <Input type = "text" name = "id" placeholder = "ID" value = {this.state.id} onChange = {this.handleChange} />
+      <Input type = "password" name = "password" placeholder = "PASSWORD" value = {this.state.password} onChange = {this.handleChange} />
+      <Input type = "password" name = "pw_check" placeholder = "PASSWORD 확인" value = {this.state.pw_check} onChange = {this.handleChange} />
+      <Input type = "text" name = "phone" placeholder = "전화번호" value = {this.state.phone} onChange = {this.handleChange} />
+      <Submit type = "submit" > SIGN UP </Submit> 
       </Form >
       </Contents>
 
@@ -210,4 +102,4 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+export default withRouter(SignUp);
