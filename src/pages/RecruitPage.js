@@ -1,7 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import RecruitList from 'components/Recruitment';
 import Header from 'components/Header';
+/*import styled from 'styled-components';
 
+const Container = styled.div `
+  display : flex;
+  justify-content : center;
+  align-items : center;
+`;*/
 
 class RecruitPage extends Component {
   

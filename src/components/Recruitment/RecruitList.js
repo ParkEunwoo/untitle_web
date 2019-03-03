@@ -2,11 +2,20 @@ import React, { Component } from 'react';
 import RecruitItem from './RecruitItem';
 import {NavLink} from 'react-router-dom';
 import styled from 'styled-components';
+/*
+const Box = styled.div `
+  display : flex;
+  flex-direction : row;
+  flex-wrap : wrap;
+  justify-content : flex-start;
+  align-items : center;
+`;*/
 
 const Box = styled.div `
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
-  grid-gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(23em, 23em));
+  grid-auto-rows: minmax(23em, auto);
+  grid-gap: 1.5em;
 `;
 
 const r = [{
@@ -29,7 +38,18 @@ const r = [{
     startDate:'19-03-02',
     endDate:'19-06-05'
   }
-}];
+},{
+  type:"프로젝트",
+  title:'예시 길 때 이거는 제목이 이정도는 되는데 넘치지 않게 해줄 수 있는가요',
+  leader: '박은우',
+  recruitNum: 19,
+  joinNum:1,
+  period:{
+    startDate:'19-03-02',
+    endDate:'19-06-05'
+  }
+}
+];
 
 class RecruitList extends Component {
 
