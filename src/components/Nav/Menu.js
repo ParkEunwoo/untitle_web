@@ -11,13 +11,18 @@ const List = styled.ul`
     display: flex;
     list-style: none;
     justify-content: space-around;
-    padding-bottom:1%;
-    border-bottom: gray 1px solid;
+    align-items: center;
+    padding: 1% 0;
+    margin: 0;
 `;
 
 const Item = styled.li`
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #f36e65;
+    margin: 0 1em;
+    &:nth-child(1){
+        margin-right:auto;
+    }
 `;
 
 const Menu = ({isSession}) => {

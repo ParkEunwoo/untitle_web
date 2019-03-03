@@ -52,7 +52,7 @@ const App = () => {
         <div>
             <GlobalStyle />
             <Nav isSession={false}/>
-            <Route path="/" component={UpIndex}/>
+            <Route exact path="/" component={UpIndex}/>
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/signup" component={SignUpPage} />
             <Route exact path="/login/check" component={CheckPage} /> 
