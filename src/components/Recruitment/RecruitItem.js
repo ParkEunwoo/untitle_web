@@ -21,8 +21,8 @@ class RecruitItem extends Component {
             <h2>{this.props.title}</h2>
             <h3>{this.props.leader}</h3>
             <p>
-              <span>{this.props.startDate} ~ {this.props.endDate}</span>
-              <span>{this.props.joinNum}/{this.props.recruitNum}명</span>
+              <div>{this.props.startDate} ~ {this.props.endDate}</div>
+              <div>{this.props.joinNum}/{this.props.recruitNum}명</div>
             </p>
           </Item>
         

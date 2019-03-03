@@ -29,11 +29,52 @@ check = () => { type: CHECK };
 modify = () => { type: MODIFY };
 
 registRecruit = () => { type: REGIST_RECRUIT };
+applyRecruit = () => { type: APPLY_RECRUIT };
+modifyRecruit = () => { type: MODIFY_RECRUIT };
+
+writeActivity = () => { type: WRITE_ACTIVITY };
+modifyActivity = () => { type: MODIFY_ACTIVITY };
+writeComment = () => { type: WRITE_COMMENT };
+removeComment = () => { type: REMOVE_COMMENT };
+submitWork = () => { type: SUBMIT_WORK };
+
+registPortfolio = () => { type: REGIST_PORTFOLIO };
 
 //reducer
 
+const initialState = {
+
+};
+
+reducer = (state = initialState, action) => {
+    switch(action.type){
+        case SIGN_UP:
+            return applySignUp(state);
+        case LOG_IN:
+            return applyLogin(state);
+        case CHECK:
+            return applyCheck(state);
+        case LOG_OUT:
+            return applyLogout(state);
+        case MODIFY:
+            return applyModify(state);
+    }
+}
+
 //reducer functions
 
+applySignUp = (state) => {
+}
 //export action creators
 
+const actionCreators = {
+    signUp,
+    logIn,
+    logOut,
+    check,
+    modify
+};
+
 //export reducer
+
+export default reducer;
