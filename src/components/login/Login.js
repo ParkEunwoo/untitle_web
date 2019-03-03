@@ -8,6 +8,7 @@ const Contents = styled.div `
   background-color : #19B3B1; 
   color : rgba(255,255,255,100);
   text-align : center;
+  height: 100vh;
 `;
 
 const Form = styled.form `
@@ -79,14 +80,14 @@ class Login extends Component {
   render() {
 
     return ( 
-      <Contents className = "contents">
-      <h1>UNTITLE</h1>
-      <Form onSubmit = {
+      <Contents>
+        <h1>UNTITLE</h1>
+        <Form onSubmit = {
         () => {
           console.log(this.state.id);
           console.log(this.state.pw);
         }
-      } >
+        } >
       <Input type = "text"
       name = "id"
       placeholder = "ID"

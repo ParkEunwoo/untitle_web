@@ -9,125 +9,59 @@ const Box = styled.div `
   grid-gap: 2em;
 `;
 
-
-const recruit = [
-  {
-    _id: 0,
-    type: '멘토링',
-    title: '1학년을 위한 프로그래밍',
-    leader: '류정민',
-    period: {
-      startDate:'2019-03-11',
-      endDate:'2019-06-21'
-    },
-    recruitNum: 20,
-    joinNum: 0
-  },
-  {
-    _id: 1,
-    type: '멘토링',
-    title: '웹 프론트앤드',
-    leader: '박은우',
-    period: {
-      startDate:'2019-03-11',
-      endDate:'2019-06-21'
-    },
-    recruitNum: 20,
-    joinNum: 0
-  },
-  {
-    _id: 2,
-    type: '멘토링',
-    title: '디자인을 위한 얕고 넓은 멘토링',
-    leader: '김윤회',
-    period: {
-      startDate:'2019-03-11',
-      endDate:'2019-06-21'
-    },
-    recruitNum: 20,
-    joinNum: 0
-  },
-  {
-    _id: 0,
-    type: '멘토링',
-    title: '1학년을 위한 프로그래밍',
-    leader: '류정민',
-    period: {
-      startDate:'2019-03-11',
-      endDate:'2019-06-21'
-    },
-    recruitNum: 20,
-    joinNum: 0
-  },
-  {
-    _id: 0,
-    type: '멘토링',
-    title: '1학년을 위한 프로그래밍',
-    leader: '류정민',
-    period: {
-      startDate:'2019-03-11',
-      endDate:'2019-06-21'
-    },
-    recruitNum: 20,
-    joinNum: 0
-  },
-  {
-    _id: 0,
-    type: '멘토링',
-    title: '1학년을 위한 프로그래밍',
-    leader: '류정민',
-    period: {
-      startDate:'2019-03-11',
-      endDate:'2019-06-21'
-    },
-    recruitNum: 20,
-    joinNum: 0
-  },
-  {
-    _id: 0,
-    type: '멘토링',
-    title: '1학년을 위한 프로그래밍',
-    leader: '류정민',
-    period: {
-      startDate:'2019-03-11',
-      endDate:'2019-06-21'
-    },
-    recruitNum: 20,
-    joinNum: 0
-  },
-  {
-    _id: 0,
-    type: '멘토링',
-    title: '1학년을 위한 프로그래밍',
-    leader: '류정민',
-    period: {
-      startDate:'2019-03-11',
-      endDate:'2019-06-21'
-    },
-    recruitNum: 20,
-    joinNum: 0
-  },
-  {
-    _id: 0,
-    type: '멘토링',
-    title: '1학년을 위한 프로그래밍',
-    leader: '류정민',
-    period: {
-      startDate:'2019-03-11',
-      endDate:'2019-06-21'
-    },
-    recruitNum: 20,
-    joinNum: 0
+const r = [{
+  type:"멘토링",
+  title:'예시 짧을 때',
+  leader: '박은우',
+  recruitNum: 19,
+  joinNum:1,
+  period:{
+    startDate:'19-03-02',
+    endDate:'19-06-05'
   }
-]
+},{
+  type:"스터디",
+  title:'예시 길 때 이거는 제목이 이정도는 되는데 넘치지 않게 해줄 수 있는가요',
+  leader: '박은우',
+  recruitNum: 19,
+  joinNum:1,
+  period:{
+    startDate:'19-03-02',
+    endDate:'19-06-05'
+  }
+}];
 
 class RecruitList extends Component {
+
+  state = {
+    recruitment: ""
+  }
+
+  componentDidMount() {
+    this.callApi()
+      .then(res => this.setState({recruitment: res}))
+      .catch(err => console.error(err));
+  }
+
+  callApi = async () => {
+    const response = await fetch('/api/recruit/status');
+    const body = await response.json();
+    return body;
+  }
+
   render() {
-    const recruitment =recruit.map(info => <RecruitItem key = {info._id} title = {info.title}
+    const recruitment =
+    this.state.recruitment ?
+      this.state.recruitment.map(info => <RecruitItem key = {info._id} title = {info.title}
       type = {info.type}
       leader = {info.leader} 
       startDate = {info.period.startDate} endDate= {info.period.endDate}
-      recruitNum = {info.recruitNum} joinNum = {info.joinNum}  />);
+      recruitNum = {info.recruitNum} joinNum = {info.joinNum}  />)
+      : r.map(info => <RecruitItem key = {info._id} title = {info.title}
+        type = {info.type}
+        leader = {info.leader} 
+        startDate = {info.period.startDate} endDate= {info.period.endDate}
+        recruitNum = {info.recruitNum} joinNum = {info.joinNum}  />);
     
     return (
       <div>

@@ -58,7 +58,7 @@ const App = () => {
             <Route exact path="/" component={UpIndex}/>
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/signup" component={SignUpPage} />
-            <Route exact path="/login/check" component={CheckPage} /> 
+            <Route exact path="/check" component={CheckPage} /> 
             <Route exact path="/mypage" component={MyPage} />
             <Route exact path="/recruit" component={RecruitPage} />
             <Route exact path="/recruit/register" component={RegisterPage} />
