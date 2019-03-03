@@ -20,7 +20,7 @@ import {
 
 const GlobalStyle = createGlobalStyle`
     @import url("//fonts.googleapis.com/css?family=Nanum+Gothic");
-    @import url("//fonts.googleapis.com/css?family=Roboto");
+    @import url("//fonts.googleapis.com/css?family=Roboto:300");
 
     html,body {
         height : 100%;
@@ -33,6 +33,9 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         box-sizing: border-box;
         font-family: "Roboto", sans-serif;
+        &:lang(ko){
+            font-family: "Nanum Gothic", sans-serif;
+        }
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
