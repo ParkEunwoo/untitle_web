@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import RecruitItem from './RecruitItem';
 import {NavLink} from 'react-router-dom';
+import styled from 'styled-components';
+
+const Box = styled.div `
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+  grid-gap: 2em;
+`;
+
 
 const recruit = [
   {
@@ -39,6 +47,78 @@ const recruit = [
     recruitNum: 20,
     joinNum: 0
   },
+  {
+    _id: 0,
+    type: '멘토링',
+    title: '1학년을 위한 프로그래밍',
+    leader: '류정민',
+    period: {
+      startDate:'2019-03-11',
+      endDate:'2019-06-21'
+    },
+    recruitNum: 20,
+    joinNum: 0
+  },
+  {
+    _id: 0,
+    type: '멘토링',
+    title: '1학년을 위한 프로그래밍',
+    leader: '류정민',
+    period: {
+      startDate:'2019-03-11',
+      endDate:'2019-06-21'
+    },
+    recruitNum: 20,
+    joinNum: 0
+  },
+  {
+    _id: 0,
+    type: '멘토링',
+    title: '1학년을 위한 프로그래밍',
+    leader: '류정민',
+    period: {
+      startDate:'2019-03-11',
+      endDate:'2019-06-21'
+    },
+    recruitNum: 20,
+    joinNum: 0
+  },
+  {
+    _id: 0,
+    type: '멘토링',
+    title: '1학년을 위한 프로그래밍',
+    leader: '류정민',
+    period: {
+      startDate:'2019-03-11',
+      endDate:'2019-06-21'
+    },
+    recruitNum: 20,
+    joinNum: 0
+  },
+  {
+    _id: 0,
+    type: '멘토링',
+    title: '1학년을 위한 프로그래밍',
+    leader: '류정민',
+    period: {
+      startDate:'2019-03-11',
+      endDate:'2019-06-21'
+    },
+    recruitNum: 20,
+    joinNum: 0
+  },
+  {
+    _id: 0,
+    type: '멘토링',
+    title: '1학년을 위한 프로그래밍',
+    leader: '류정민',
+    period: {
+      startDate:'2019-03-11',
+      endDate:'2019-06-21'
+    },
+    recruitNum: 20,
+    joinNum: 0
+  }
 ]
 
 class RecruitList extends Component {
@@ -51,7 +131,7 @@ class RecruitList extends Component {
     
     return (
       <div>
-        <NavLink to="/recruit/apply">{recruitment}</NavLink>
+        <NavLink to="/recruit/apply"><Box>{recruitment}</Box></NavLink>
       </div>
     );
   }
