@@ -10,8 +10,8 @@ class RegisterForm extends Component{
     explain: '',
     startDate: '',
     endDate: '',
-    recruitNum: 2,
-    joinNum: 1
+    recruitNum: 0,
+    joinNum: 0
   }
 
   handleChange = (e) => {

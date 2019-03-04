@@ -1,38 +1,48 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { put } from 'axios';
+
 
 class Apply extends Component{
   state = {
-    jNum: 0
+    _id:'',
+    explain:'',
+    period:{
+      startDate:'',
+      endDate:''
+    },
+    type:'',
+    recruitNum:0,
+    joinNum:0
   }
 
-  componentWillMount(){
-    const jNum = this.props.jNum;
-    this.setState({
-        jNum
-      }
-    );
+  componentDidMount(){
+    const {_id, explain, period, type, recruitNum, joinNum} = this.props.location.state.info;
+
+    return this.setState({
+      _id, explain, period, type, recruitNum, joinNum
+    });
+  }
+
+  applyRecruit = () => {
+    const url = `/api/recruit/apply/${this.state._id}`;
+    return put(url);
+  }
+
+  handleSubmit = () => {
+    this.applyRecruit()
+      .then((response) => {
+        this.props.history.push('/recruit');
+      });
   }
 
   render() { 
     return (
       <div>
-          <div>{this.props.type}</div>
-          <div>{this.props.explain}</div>
-          <div>활동기간 {this.props.startDate} ~ {this.props.endDate} </div>
-          <div>모집인원 {this.state.joinNum}/{this.props.recruitNum}명 </div>
-          
-          <form action="" method = "post">
-              <p>
-                스케줄러- 가능한 시간을 체크하세요
-                
-                <button type = "submit" value = "submit">확인</button>
-                <button type = "reset" value = "reset">처음상태로</button>
-                <button>수정</button>
-              </p>
-              <NavLink to="/recruit/apply/timetable">내 시간표</NavLink>
-              <button type= "submit" value = "apply_submit" onClick={this.joinNumPlus}>><NavLink to="/recruit/apply">신청</NavLink></button>
-            </form>
+          <div>{this.state.explain}</div>
+          <div>활동기간 {this.state.period.startDate}~{this.state.period.endDate}</div>
+          <div>모집인원 {this.state.joinNum} / {this.state.recruitNum}</div>
+          <button onClick={this.handleSubmit}>신청</button>
       </div>
     );
   }
@@ -40,4 +50,4 @@ class Apply extends Component{
 
 }
 
-export default Apply;
+export default withRouter(Apply);
