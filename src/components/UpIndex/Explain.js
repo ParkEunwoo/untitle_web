@@ -9,10 +9,16 @@ const Div = styled.div`
 `;
 const Back = styled.img`
     width:100%;
+    height:auto;
 `;
 
 const Rect = styled.img`
-
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -63%);
+    width:25%;
+    height:auto;
 `;
 
 const Text = styled.img`
