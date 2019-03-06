@@ -23,11 +23,26 @@ const activity = [
 ];
 
 
-
-
 class NoticeList extends Component {
+    state = {
+        active:''
+    }
+
+    componentDidMount() {
+      this.callApi()
+        .then(res => this.setState({active: res}))
+        .catch(err => console.error(err));
+    }
+    
+    callApi = async () => {
+      const response = await fetch('/api/active/status');
+      const body = await response.json();
+      return body;
+    }
+    
     render() {
-        const noticeboard = activity.map(activity=><NoticeItem key = {activity.id} id = {activity.id} type={activity.type} title={activity.title} leader={activity.leader}/>)
+        const noticeboard = this.state.active!==''?this.state.active.map(info=><NoticeItem key = {info._id} type={info.type} title = {info.title} leader={info.leader}/>):
+        activity.map(activity=><NoticeItem key = {activity.id} id = {activity.id} type={activity.type} title={activity.title} leader={activity.leader}/>);
         return (
             <div>
                 {noticeboard}

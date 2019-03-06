@@ -85,7 +85,7 @@ class RecruitList extends Component {
       type = {info.type}
       leader = {info.leader} 
       startDate = {info.period.startDate} endDate= {info.period.endDate}
-      recruitNum = {info.recruitNum} joinNum = {info.joinNum} /></NavLink>)
+      recruitNum = {info.recruitNum} joinNum = {info.member.length/2} /></NavLink>)
       : r.map(info => <NavLink to={{
         pathname:"/recruit/apply",
         state:{
