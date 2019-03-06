@@ -51,6 +51,72 @@ const r = [{
     endDate:'19-06-05'
   },
   explain:''
+},{
+  type:"프로젝트",
+  title:'예시 길 때 이거는 제목이 이정도는 되는데 넘치지 않게 해줄 수 있는가요',
+  leader: '박은우',
+  recruitNum: 19,
+  joinNum:1,
+  period:{
+    startDate:'19-03-02',
+    endDate:'19-06-05'
+  },
+  explain:''
+},{
+  type:"프로젝트",
+  title:'예시 길 때 이거는 제목이 이정도는 되는데 넘치지 않게 해줄 수 있는가요',
+  leader: '박은우',
+  recruitNum: 19,
+  joinNum:1,
+  period:{
+    startDate:'19-03-02',
+    endDate:'19-06-05'
+  },
+  explain:''
+},{
+  type:"프로젝트",
+  title:'예시 길 때 이거는 제목이 이정도는 되는데 넘치지 않게 해줄 수 있는가요',
+  leader: '박은우',
+  recruitNum: 19,
+  joinNum:1,
+  period:{
+    startDate:'19-03-02',
+    endDate:'19-06-05'
+  },
+  explain:''
+},{
+  type:"프로젝트",
+  title:'예시 길 때 이거는 제목이 이정도는 되는데 넘치지 않게 해줄 수 있는가요',
+  leader: '박은우',
+  recruitNum: 19,
+  joinNum:1,
+  period:{
+    startDate:'19-03-02',
+    endDate:'19-06-05'
+  },
+  explain:''
+},{
+  type:"프로젝트",
+  title:'예시 길 때 이거는 제목이 이정도는 되는데 넘치지 않게 해줄 수 있는가요',
+  leader: '박은우',
+  recruitNum: 19,
+  joinNum:1,
+  period:{
+    startDate:'19-03-02',
+    endDate:'19-06-05'
+  },
+  explain:''
+},{
+  type:"프로젝트",
+  title:'예시 길 때 이거는 제목이 이정도는 되는데 넘치지 않게 해줄 수 있는가요',
+  leader: '박은우',
+  recruitNum: 19,
+  joinNum:1,
+  period:{
+    startDate:'19-03-02',
+    endDate:'19-06-05'
+  },
+  explain:''
 }
 ];
 
