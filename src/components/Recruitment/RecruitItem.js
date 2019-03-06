@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const Item = styled.div ` 
+  width : 20em;
+  height: 20em;
   box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.2); 
   padding: 1.5em;
   text-align: center;

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Nav from 'components/Nav';
+import { get } from 'axios';
 import { Route  } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import {
@@ -50,11 +51,43 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-const App = () => {
+
+let check = false;
+class App extends Component{
+    state = {
+        isSession: false,
+        userName: '',
+        userNumber: ''
+    }
+    getSession = () => {
+        get('/session').then((response) => {
+            this.setState({
+                isSession: response.data.isSession,
+                userName: response.data.userName,
+                userNumber: response.data.userNumber
+            });
+            check=true;
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
+    componentDidUpdate(prevProps, prevState, snapshot){
+
+        if(!check){
+            this.getSession();
+        }
+        check=false;
+
+    }
+    componentDidMount() {
+        this.getSession();
+    }
+    render(){
     return (
         <div>
             <GlobalStyle />
-            <Nav isSession={false}/>
+            <Nav isSession={this.state.isSession}/>
             <Route exact path="/" component={UpIndex}/>
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/signup" component={SignUpPage} />
@@ -70,6 +103,7 @@ const App = () => {
             <Route exact path="/activity/register" component={InputActivity}/>
         </div>
     );
+    }
 };
 
 export default App;

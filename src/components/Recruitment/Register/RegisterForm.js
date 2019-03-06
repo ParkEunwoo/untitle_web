@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { post } from 'axios';
+import { withRouter } from 'react-router-dom';
 
 class RegisterForm extends Component{
   state = {
@@ -8,8 +10,8 @@ class RegisterForm extends Component{
     explain: '',
     startDate: '',
     endDate: '',
-    recruitNum: 2,
-    joinNum: 1
+    recruitNum: 0,
+    joinNum: 0
   }
 
   handleChange = (e) => {
@@ -18,11 +20,26 @@ class RegisterForm extends Component{
       [e.target.name]: value
     });
   }
+  
+  registRecruit = () => {
+    const url = '/api/recruit/regist';
+    const { type, title, explain, startDate, endDate, recruitNum } = this.state;
+    const period = {
+      startDate,
+      endDate
+    }
+    return post(url, { type, title, explain, period, recruitNum });
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
-    this.props.onCreate(this.state);
+    this.registRecruit()
+      .then((response) => {
+        console.log(response.data);
+        this.props.history.push('/recruit');
+      });
   }
+
   
   render(){
     return (
@@ -44,12 +61,10 @@ class RegisterForm extends Component{
         <div>수업내용 
         <textarea name = "explain" onChange={this.handleChange}></textarea></div>
         
-        <div>수업가능 시간 입력<input/></div>
-        
         <button type = "submit">등록</button>
       </form>
     );
   }
 }
 
-export default RegisterForm;
+export default withRouter(RegisterForm);
