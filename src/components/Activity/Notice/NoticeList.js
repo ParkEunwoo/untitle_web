@@ -41,7 +41,9 @@ class NoticeList extends Component {
     }
     
     render() {
-        const noticeboard = this.state.active!==''?this.state.active.map(info=><NoticeItem key = {info._id} type={info.type} title = {info.title} leader={info.leader}/>):
+        const noticeboard = this.state.active!==''?this.state.active.map(info=><NoticeItem key = {info._id} type={info.type} title = {info.title} leader={info.leader} 
+            startDate = {info.period.startDate} endDate= {info.period.endDate}
+            recruitNum = {info.recruitNum} joinNum = {info.member.length/2} />):
         activity.map(activity=><NoticeItem key = {activity.id} id = {activity.id} type={activity.type} title={activity.title} leader={activity.leader}/>);
         return (
             <div>
