@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
 import NoticeItem from './NoticeItem';
+import styled from 'styled-components';
+
+const Box = styled.div `
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(23em, 23em));
+  grid-auto-rows: minmax(23em, auto);
+  grid-gap: 1.5em;
+`;
+
 
 const activity = [
     {
@@ -47,7 +56,7 @@ class NoticeList extends Component {
         activity.map(activity=><NoticeItem key = {activity.id} id = {activity.id} type={activity.type} title={activity.title} leader={activity.leader}/>);
         return (
             <div>
-                {noticeboard}
+                <Box>{noticeboard}</Box>
             </div>
         );
     }

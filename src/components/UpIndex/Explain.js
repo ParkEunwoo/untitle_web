@@ -5,7 +5,10 @@ import text from 'lib/text.png';
 import styled from 'styled-components';
 
 const Div = styled.div`
+    widthL100%;
+    height:auto;
     background: #034b61;
+    padding-bottom: 12em;
 `;
 const Back = styled.img`
     width:100%;

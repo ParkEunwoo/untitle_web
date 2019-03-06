@@ -12,7 +12,6 @@ const Item = styled.div `
   margin-bottom: 1.5em;
   margin-left : 1em;
   margin-right : 1em;
-
 `;
 
 const Type = styled.h4 `
