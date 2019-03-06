@@ -9,14 +9,25 @@ const Div = styled.div`
 `;
 const Back = styled.img`
     width:100%;
+    height:auto;
 `;
 
 const Rect = styled.img`
-
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:25%;
+    height:auto;
 `;
 
 const Text = styled.img`
-
+    position: absolute;
+    top: 51%;
+    left: 59%;
+    transform: translate(-59%, -51%);
+    width:35%;
+    height:auto;
 `;
 
 const Explain = () => {
