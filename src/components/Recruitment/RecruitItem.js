@@ -48,6 +48,7 @@ const Button = styled.button `
     &:focus {
     outline: none;
     }
+    display:none;
 `;
 class RecruitItem extends Component {    
 /*
@@ -62,6 +63,17 @@ class RecruitItem extends Component {
     }
   }
   }*/
+  state = {
+    clicked :false
+  }
+
+  handleChange = () => {
+    this.setState({
+      cliked : this.state.clicked===true ? false : true
+    });
+    console.log(this.state.clicked);
+  }
+
     render() {
       return (
           <Item>
@@ -71,13 +83,13 @@ class RecruitItem extends Component {
             </span>
             <h2>{this.props.title}</h2>
             <h3>{this.props.leader}</h3>
-            <p>
+            <p className="block1">
               <div>{this.props.startDate} ~ {this.props.endDate}</div>
               <div>{this.props.joinNum}/{this.props.recruitNum}명</div>
             </p>
-            <Button></Button>
+            <p className="block2"><Button>정보수정</Button><Button>구성원정보</Button></p>
           </Item>
-        
+
 
       );
     }
