@@ -6,117 +6,117 @@ import styled from 'styled-components';
 const Box = styled.div `
   border: 1px solid #d9dbdb;
   background-color: white;
-  margin-top: 3em;
-  margin-left: 10em;
-  margin-right: 10em;
-  margin-bottom:3em;
+  margin-top: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 4%;
 `;
 
 const BoxTop = styled.h2 `
   margin: 0;
   color: #ffffff;
   font-weight: bold;
-  padding: 1em 2em;
+  padding: 2.5% 4%;
   width :100%;
   border-bottom: 1px solid #d9dbdb;
   background-color: #034B61 ;
 `;
 
 const Form = styled.form `
-  margin-top: 3em;
-  margin-bottom: 3em;
-  margin-left: 2em;
-  margin-right: 2em;
+  margin-top: 3%;
+  margin-bottom: 3%;
 `;
 
 const Input = styled.input `
-  width: 70em;
+  width: 20%;
   border : 2px solid #dddddd; 
-  padding: 1em 1.5em;
-  margin-top: 1em;
+  padding: 1% 1.5%;
+  margin-top: 1%; 
+  margin-left: 2%;
+  margin-right : 1%;
 `;
 
 const InputTitle = styled.input `
-  width: 70em;
+  width: 75%;
   border : 2px solid #dddddd; 
-  padding: 1em 1.5em;
-  margin-left: 1em;
-  margin-top: 1em;
+  padding: 1% 1.5%;
+  margin-left: 3%;
+  margin-top: 1%;
 `;
 
 const InputDateStart = styled.input `
-  width: 33em;
+  width: 20%;
   border : 2px solid #dddddd; 
-  padding: 1em 1.5em;
-  margin-right : 1em;
-  margin-top: 1em;
+  padding: 1% 1.5%;
+  margin-right : 1%;
+  margin-top: 1%;
+  margin-left: 2%;
 `;
 
 const InputDateEnd = styled.input `
-  width: 33.25em;
+  width: 20%;
   border : 2px solid #dddddd; 
-  padding: 1em 1.5em;
-  margin-left:1.5em;
-  margin-right : 1em;
-  margin-top: 1em;
+  padding: 1% 1.5%;
+  margin-left: 2%;
+  margin-right : 1%;
+  margin-top: 1%;
 `;
 
 const Textarea = styled.textarea `
   border : 2px solid #dddddd; 
-  width: 70em;
-  height: 30em;
-  margin-top: 1em;
-  
+  width: 75%;
+  padding-bottom : 20%;
+  margin-top: 1%;
+  margin-left: 2%;
 `;
 
 const CheckBox = styled.input `
-  height: 2.5em;
-  width: 2.5em;
-  background-color: #eeeeee;
+  width:2em;
+  height:2em;
   cursor: pointer;
-  margin-top: 2.5em;
 `;
 
 const CheckBoxLabel = styled.label `
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  margin-left: 1em;
-  margin-right: 2em;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+  margin-left: 1%;
+  margin-right: 2%;
 `;
 
 const Label = styled.label `
-  margin: 1.5em 5em;
+  margin: 1.5% 5%;
+  display : inline-block;
   float:left;
 `;
 
 const Title = styled.div `
-  margin-bottom: 2em;
+  margin-bottom: 2%;
 `;
 
 const CheckSection = styled.div `
-  margin-bottom: 2em;
-  margin-left: 5em;
-  margin-right: 5em;
+  margin-bottom: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
 `;
 
 const Date = styled.div `
-  margin-bottom: 2em;
+  margin-bottom: 2%;
 `;
 
 const RecruitNum = styled.div `
-  margin-bottom : 2em;
+  margin-bottom : 2%;
 `;
 
 const Explain = styled.div `
-  margin-bottom : 2em;
+  margin-bottom : 2%;
 `;
 
 const Button = styled.button `
   border: none;
   background-color: #000000;
   color: #ffffff;
-  padding: 1em 1.5em;
-  font-size: 1em;
+  padding: 1% 2%;
+  font-size : 1.1em;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -178,7 +178,7 @@ class RegisterForm extends Component{
         <InputDateStart type="date" name="startDate"onChange= {this.handleChange}/> ~ 
         <InputDateEnd type="date" name="endDate" onChange= {this.handleChange}/></Date>
         
-        <RecruitNum><Label>모집인원</Label> <Input type="number" name="recruitNum" onChange={this.handleChange}/></RecruitNum>
+        <RecruitNum><Label>모집인원</Label> <Input type="number" name="recruitNum" onChange={this.handleChange}/>명</RecruitNum>
         
         <Explain><Label>수업내용</Label> 
         <Textarea name = "explain" onChange={this.handleChange}></Textarea></Explain>

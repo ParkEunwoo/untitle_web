@@ -112,16 +112,25 @@ componentWillUnmount() {
         this.box.scrollTop = scrollHeight - clientHeight;
     };
 */
- 
-    return (
+/*
+    window.onscroll = function() {scrollFunction()};
 
+    function scrollFunction() {
+    if (this.contents.scrollTop > 0) {
+        this.contents.style.padding = "6em 2.7em";
+
+    } else {
+        this.contents.style.padding = "7em 3.5em";
+    }
+    }
+*/
+    return (
         <Contents>
             <Block>
                 <h1>{props.title}</h1>
                 {!!props.sub && <h2>{props.sub}</h2>}
                 {!!props.register && <Button><Link to={props.link}>{props.register}</Link></Button>}
             </Block>
-            
         </Contents>
     )
 }
