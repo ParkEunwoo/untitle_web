@@ -6,8 +6,8 @@ const Contents = styled.div `
     background-color: #19B3B1;
     color : rgba(255,255,255,100);
     text-align : center;
-    padding-top: 5em;
-    padding-bottom : 5em;
+    padding-top: 7em;
+    padding-bottom : 3.5em;
     transition: 0.4s;
 `;
 

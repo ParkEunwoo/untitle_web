@@ -15,6 +15,9 @@ const List = styled.ul`
     align-items: center;
     padding: 1% 0;
     margin: 0;
+    background : rgba(255,255,255,1);
+    position: fixed; 
+    width: 100%;
 `;
 
 const Item = styled.li`
