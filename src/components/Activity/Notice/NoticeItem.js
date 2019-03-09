@@ -120,13 +120,13 @@ class NoticeItem extends Component {
                 <Block2 ref={(ref) => this.block2=ref}>
                   <Button type={this.props.type}>정보수정</Button>
                   <div>
-                  <Button type={this.props.type}><NavLink to={{
+                  <NavLink to={{
                     pathname:`activity/${this.props.id}/member`,
                     state:{
                       title: this.props.title,
                       leader: this.props.leader
                     }
-                  }}>구성원정보</NavLink></Button>
+                  }}><Button type={this.props.type}>구성원정보</Button></NavLink>
                   </div>
                 </Block2>
 
