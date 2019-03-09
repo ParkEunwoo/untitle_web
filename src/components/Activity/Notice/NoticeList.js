@@ -34,29 +34,47 @@ const activity = [
 
 class NoticeList extends Component {
     state = {
-        active:''
+        leader:'',
+        member:''
     }
 
     componentDidMount() {
-      this.callApi()
-        .then(res => this.setState({active: res}))
-        .catch(err => console.error(err));
+        this.callMemberApi()
+          .then(res => this.setState({member: res}))
+          .catch(err => console.error(err));
+
+        this.callLeaderApi()
+            .then(res => this.setState({leader: res}))
+            .catch(err => console.error(err));
     }
     
-    callApi = async () => {
-      const response = await fetch('/api/active/status');
-      const body = await response.json();
-      return body;
+    callMemberApi = async () => {
+        const response = await fetch('/api/active/status/member');
+        const body = await response.json();
+        return body;
+    }
+
+    callLeaderApi = async () => {
+        const response = await fetch('/api/active/status/leader');
+        const body = await response.json();
+        return body;
     }
     
     render() {
-        const noticeboard = this.state.active!==''?this.state.active.map(info=><NoticeItem key = {info._id} type={info.type} title = {info.title} leader={info.leader} 
+        const leaderBoard = this.state.leader!==''?this.state.leader.map(info=><NoticeItem key = {info._id} type={info.type} title = {info.title} leader={info.leader} 
+            startDate = {info.period.startDate} endDate= {info.period.endDate}
+            recruitNum = {info.recruitNum} joinNum = {info.member.length/2} />):
+        activity.map(activity=><NoticeItem key = {activity.id} id = {activity.id} type={activity.type} title={activity.title} leader={activity.leader}/>);
+        const memberBoard = this.state.member!==''?this.state.member.map(info=><NoticeItem key = {info._id} type={info.type} title = {info.title} leader={info.leader} 
             startDate = {info.period.startDate} endDate= {info.period.endDate}
             recruitNum = {info.recruitNum} joinNum = {info.member.length/2} />):
         activity.map(activity=><NoticeItem key = {activity.id} id = {activity.id} type={activity.type} title={activity.title} leader={activity.leader}/>);
         return (
             <div>
-                <Box>{noticeboard}</Box>
+            <h2>Leader</h2>
+            <Box>{leaderBoard}</Box>
+                <h2>Member</h2>
+                <Box>{memberBoard}</Box>
             </div>
         );
     }
