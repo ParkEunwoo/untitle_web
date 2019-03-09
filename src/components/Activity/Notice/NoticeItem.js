@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Member from '../Member';
 import more from 'lib/more.png';
+
 const Item = styled.div ` 
   width : 20em;
   height: 20em;
@@ -61,7 +62,8 @@ const Button = styled.button `
     &:focus {
     outline: none;
     }
-    margin-left : 1em;
+    margin-bottom : 1.2em;
+
 `;
 
 const Block1 = styled.p `
@@ -75,10 +77,10 @@ const Block2 = styled.p `
 const Block3 = styled.p `
     display : none;
 `;
+
 class NoticeItem extends Component {
-
   handleChange = () => {
-
+    if(this.props.lead) {
       if (this.block2.style.display === "none") {
         this.block2.style.display = "block";
         this.block1.style.display = "none";
@@ -87,27 +89,44 @@ class NoticeItem extends Component {
         this.block2.style.display = "none";
         this.block1.style.display = "block";
       }
-  
+    }
+    else {
+      if (this.block3.style.display === "none") {
+        this.block3.style.display = "block";
+        this.block1.style.display = "none";
+      } 
+      else {
+        this.block3.style.display = "none";
+        this.block1.style.display = "block";
+      }
+    }
   }
 
     render() {
         const link = `/activity/${this.props.id}/notice`;
+
         return (
             <Item>
-              <div>  <More src={more} alt="더보기" onClick={this.handleChange}></More></div>
+              <div> <More src={more} alt="더보기" onClick={this.handleChange}></More></div>
             <NavLink to={link}>
                 <Type type={this.props.type}>{this.props.type}</Type>
                 <h2>{this.props.title}</h2>
                 <h3>{this.props.leader}</h3>
-                <Block1 ref={(ref => this.block1=ref)}>
-                <div>{this.props.startDate} ~ {this.props.endDate}</div>
-                <div>{this.props.joinNum}/{this.props.recruitNum}명</div>
+
+                <Block1 ref={(ref) => this.block1=ref}>
+                  <div>{this.props.startDate} ~ {this.props.endDate}</div>
+                  <div>{this.props.joinNum}/{this.props.recruitNum}명</div>
                 </Block1>
+
                 <Block2 ref={(ref) => this.block2=ref}>
-                  <Button type={this.props.type}>정보수정</Button><Button type={this.props.type}>구성원정보</Button>
+                  <Button type={this.props.type}>정보수정</Button>
+                  <div>
+                  <Button type={this.props.type}>구성원정보</Button>
+                  </div>
                 </Block2>
+
                 <Block3 ref={(ref) => this.block3=ref}>
-                <Button type={this.props.type}>신청취소</Button>
+                  <Button type={this.props.type}>신청취소</Button>
                 </Block3>
 
             </NavLink>
