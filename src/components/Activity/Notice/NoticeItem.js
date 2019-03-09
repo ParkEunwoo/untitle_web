@@ -77,8 +77,8 @@ const Block3 = styled.p `
 `;
 class NoticeItem extends Component {
 
-  handleChange = () => {
-
+  handleChange = (name) => {
+    if(this.props.leaderBoards) {
       if (this.block2.style.display === "none") {
         this.block2.style.display = "block";
         this.block1.style.display = "none";
@@ -87,14 +87,26 @@ class NoticeItem extends Component {
         this.block2.style.display = "none";
         this.block1.style.display = "block";
       }
+    }
+    else if(this.props.memberBoard) {
+      if (this.block3.style.display === "none") {
+        this.block3.style.display = "block";
+        this.block1.style.display = "none";
+      } 
+      else {
+        this.block3.style.display = "none";
+        this.block3.style.display = "block";
+      }
+    }
   
   }
 
     render() {
         const link = `/activity/${this.props.id}/notice`;
+        const name=this.props.name;
         return (
             <Item>
-              <div>  <More src={more} alt="더보기" onClick={this.handleChange}></More></div>
+              <div> <More src={more} alt="더보기" onClick={this.handleChange()}></More></div>
             <NavLink to={link}>
                 <Type type={this.props.type}>{this.props.type}</Type>
                 <h2>{this.props.title}</h2>

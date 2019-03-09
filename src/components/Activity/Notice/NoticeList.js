@@ -79,9 +79,9 @@ class NoticeList extends Component {
         return (
             <div>
             <H2>Leader</H2>
-            <Box name="leaderBoard">{leaderBoard}</Box>
+            <Box>{leaderBoard}</Box>
             <H2>Member</H2>
-            <Box name="memberBoard">{memberBoard}</Box>
+            <Box>{memberBoard}</Box>
             </div>
         );
     }
