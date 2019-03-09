@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import Member from '../Member';
 
 const Item = styled.div ` 
   width : 20em;
@@ -31,6 +32,7 @@ class NoticeItem extends Component {
         return (
             <Item>
               <div>:</div>
+              <Member _id={this.props.id}/>
             <NavLink to={link}>
                 <Type type={this.props.type}>{this.props.type}</Type>
                 <h2>{this.props.title}</h2>
