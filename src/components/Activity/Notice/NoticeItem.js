@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import Member from '../Member';
 import more from 'lib/more.png';
-
 const Item = styled.div ` 
   width : 20em;
   height: 20em;
