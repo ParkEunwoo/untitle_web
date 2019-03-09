@@ -9,6 +9,13 @@ const Box = styled.div `
   grid-gap: 1.5em;
 `;
 
+const H2 = styled.h2 `
+    margin-top: 1.5em;
+    margin-bottom : 1.5em;
+    padding-bottom : 1em;
+    padding-left : 1em;
+    border-bottom : 2px solid #eeeeee;
+`;
 
 const activity = [
     {
@@ -71,10 +78,10 @@ class NoticeList extends Component {
         activity.map(activity=><NoticeItem key = {activity.id} id = {activity.id} type={activity.type} title={activity.title} leader={activity.leader}/>);
         return (
             <div>
-            <h2>Leader</h2>
-            <Box>{leaderBoard}</Box>
-                <h2>Member</h2>
-                <Box>{memberBoard}</Box>
+            <H2>Leader</H2>
+            <Box name="leaderBoard">{leaderBoard}</Box>
+            <H2>Member</H2>
+            <Box name="memberBoard">{memberBoard}</Box>
             </div>
         );
     }

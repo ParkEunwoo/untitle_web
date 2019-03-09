@@ -22,7 +22,6 @@ const Type = styled.h4 `
 }};
 `;
 
-
 class RecruitItem extends Component {    
     render() {
       return (
@@ -35,8 +34,6 @@ class RecruitItem extends Component {
               <div>{this.props.joinNum}/{this.props.recruitNum}명</div>
             </p>
           </Item>
-        
-
       );
     }
   
