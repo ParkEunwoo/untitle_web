@@ -67,10 +67,10 @@ class Apply extends Component{
   }
 
   componentDidMount(){
-    const {_id, explain, period, type, recruitNum, joinNum} = this.props.location.state.info;
+    const {_id, explain, period, type, recruitNum, member} = this.props.location.state.info;
 
     return this.setState({
-      _id, explain, period, type, recruitNum, joinNum
+      _id, explain, period, type, recruitNum, joinNum:member.length
     });
   }
 

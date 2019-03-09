@@ -30,6 +30,7 @@ class NoticeItem extends Component {
         const link = `/activity/${this.props.id}/notice`;
         return (
             <Item>
+              <div>:</div>
             <NavLink to={link}>
                 <Type type={this.props.type}>{this.props.type}</Type>
                 <h2>{this.props.title}</h2>
