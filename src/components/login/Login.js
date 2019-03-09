@@ -11,6 +11,7 @@ const Contents = styled.div `
   color : rgba(255,255,255,100);
   text-align : center;
   height: 100vh;
+  padding-top: 100px;
 `;
 
 const Form = styled.form `
