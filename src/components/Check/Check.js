@@ -7,6 +7,8 @@ const Contents = styled.div `
   color : rgba(255,255,255,100);
   text-align : center;
   background-color : #19B3B1 ;
+  padding-top : 100px;
+  height : 100vh;
 `;
 
 const Contents2 = styled.div `

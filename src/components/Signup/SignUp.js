@@ -9,6 +9,8 @@ const Contents = styled.div `
   background-color: #19B3B1 ;
   color: rgba(255,255,255,100);
   text-align: center;
+  padding-top : 100px;
+  height : 100vh;
 `;
 
 const Form = styled.form `
