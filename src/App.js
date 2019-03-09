@@ -16,7 +16,8 @@ import {
     RecruitPage,
     ApplyPage,
     TimeTablePage,
-    RegisterPage
+    RegisterPage,
+    MemberPage
 } from 'pages';
 
 const GlobalStyle = createGlobalStyle`
@@ -101,6 +102,7 @@ class App extends Component{
             <Route exact path="/activity/:id/notice" component={ActivityPage}/>
             <Route exact path="/activity" component={NoticePage}/>
             <Route exact path="/activity/register" component={InputActivity}/>
+            <Route exact path="/activity/:id/member" component={MemberPage}/>
         </div>
     );
     }

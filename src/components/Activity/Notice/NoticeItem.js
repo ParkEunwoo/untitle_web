@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import Member from '../Member';
 import more from 'lib/more.png';
 
 const Item = styled.div ` 
@@ -30,7 +29,7 @@ const More = styled.img `
   height : auto;
   float: right;
   border-radius : 200%;
-
+  cursor:pointer;
   &:hover {
     background-color : #eeeeee;
   }
@@ -121,7 +120,13 @@ class NoticeItem extends Component {
                 <Block2 ref={(ref) => this.block2=ref}>
                   <Button type={this.props.type}>정보수정</Button>
                   <div>
-                  <Button type={this.props.type}>구성원정보</Button>
+                  <Button type={this.props.type}><NavLink to={{
+                    pathname:`activity/${this.props.id}/member`,
+                    state:{
+                      title: this.props.title,
+                      leader: this.props.leader
+                    }
+                  }}>구성원정보</NavLink></Button>
                   </div>
                 </Block2>
 
