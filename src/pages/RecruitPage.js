@@ -10,7 +10,6 @@ const Container = styled.div `
 `;*/
 
 class RecruitPage extends Component {
-  
   render() {
     return (
       <Fragment>

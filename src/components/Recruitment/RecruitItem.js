@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import more from 'lib/more.png';
 import styled from 'styled-components';
 
 const Item = styled.div ` 
@@ -22,20 +23,73 @@ const Type = styled.h4 `
 }};
 `;
 
+const More = styled.img `
+  width : 1em;
+  height : auto;
+  float: right;
+  border-radius : 200%;
 
+  &:hover {
+    background-color : #eeeeee;
+  }
+`;
+
+const Button = styled.button `
+    font-size : 1em;
+    border-radius: 30px;
+    border: 2px solid #ecf0f1;
+    background-color: rgba(0,0,0,0);
+    color : rgba(255,255,255,100);
+    cursor: pointer;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    &:focus {
+    outline: none;
+    }
+    display:none;
+`;
 class RecruitItem extends Component {    
+/*
+  handleChange = () => {
+    var x = document.getComponent("Button");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } 
+    else {
+      x.style.display = "none";
+      getCom
+    }
+  }
+  }*/
+  state = {
+    clicked :false
+  }
+
+  handleChange = () => {
+    this.setState({
+      cliked : this.state.clicked===true ? false : true
+    });
+    console.log(this.state.clicked);
+  }
+
     render() {
       return (
           <Item>
+            <span>
+            <More src={more} alt="더보기" onClick={this.handleChange}></More>
             <Type type={this.props.type}>{this.props.type}</Type>
+            </span>
             <h2>{this.props.title}</h2>
             <h3>{this.props.leader}</h3>
-            <p>
+            <p className="block1">
               <div>{this.props.startDate} ~ {this.props.endDate}</div>
               <div>{this.props.joinNum}/{this.props.recruitNum}명</div>
             </p>
+            <p className="block2"><Button>정보수정</Button><Button>구성원정보</Button></p>
           </Item>
-        
+
 
       );
     }
