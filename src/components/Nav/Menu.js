@@ -33,6 +33,7 @@ const Item = styled.li`
 
 class Menu extends Component {
     handleLogout = () => {
+        sessionStorage.clear();
     get('http://13.209.116.75:9000/api/users/logout').then((response) => {
         this.props.history.push("/");
     })
@@ -42,6 +43,7 @@ class Menu extends Component {
 
 }
     render(){
+        console.log('록'+this.props.isSession);
     return(
         <List>
             <Item><NavLink to="/" ><Logo src={logo} alt={"logo"} /></NavLink></Item>

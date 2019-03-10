@@ -147,8 +147,10 @@ class RegisterForm extends Component{
     const period = {
       startDate,
       endDate
-    }
-    return post(url, { type, title, explain, period, recruitNum });
+    };
+    const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
+
+    return post(url, { type, title, explain, period, recruitNum, userInfo });
   }
 
   handleSubmit = (e) => {
