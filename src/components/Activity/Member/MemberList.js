@@ -20,23 +20,7 @@ const Inbox = styled.li `
 
 class MemberList extends Component{
     state = {
-        member:[{
-            name:'박은우',
-            number:12345678,
-            phone:'02012032134'
-        },{
-            name:'박은우',
-            number:12345678,
-            phone:'02012032134'
-        },{
-            name:'박은우',
-            number:12345678,
-            phone:'02012032134'
-        },{
-            name:'박은우',
-            number:12345678,
-            phone:'02012032134'
-        }]
+        member:[]
     }
     
     showMember = () => {
