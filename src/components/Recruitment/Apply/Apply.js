@@ -91,7 +91,9 @@ class Apply extends Component{
       <Box>
         <BoxTop>상세설명</BoxTop>
         <Contents>
-            <Items>{this.state.explain}</Items>
+            <Items>{this.state.explain.split('\n').map( line => {
+              return(<span>{line}<br/></span>);
+            })}</Items>
             <Items><Title>활동기간</Title> {this.state.period.startDate}~{this.state.period.endDate}</Items>
             <Items><Title>모집인원</Title> {this.state.joinNum} / {this.state.recruitNum}</Items>
             <Button onClick={this.handleSubmit}>신청</Button>
