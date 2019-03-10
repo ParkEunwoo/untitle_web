@@ -57,20 +57,12 @@ class App extends Component{
     state = {
         userInfo:''
     }
-    componentDidMount() {
-        const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
-        console.log(userInfo);
-        this.setState({
-            userInfo
-        });
-        console.log(this.state);
-        console.log(this.state.userInfo===''?false:true);
-    }
+    
     render(){
     return (
         <div>
             <GlobalStyle />
-            <Nav isSession={this.state.userInfo!==""?true:false}/>
+            <Nav isSession={JSON.parse(sessionStorage.getItem('userInfo'))==null?false:true}/>
             <Route exact path="/" component={UpIndex}/>
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/signup" component={SignUpPage} />

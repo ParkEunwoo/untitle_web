@@ -43,7 +43,6 @@ class Menu extends Component {
 
 }
     render(){
-        console.log('록'+this.props.isSession);
     return(
         <List>
             <Item><NavLink to="/" ><Logo src={logo} alt={"logo"} /></NavLink></Item>
