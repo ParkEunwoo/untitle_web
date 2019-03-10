@@ -1,29 +1,23 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import MemberItem from './MemberItem';
 import { get } from 'axios';
+import styled from 'styled-components';
 
-const Upperbox = styled.th`
-    border-bottom: 1px solid #444444;
-    padding: 10px;
-    text-align: center;
-    background-color: #19B3B1;
+const Box = styled.ul`
+    list-style: none;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+    border-bottom: 1px solid #f36e65;
 `;
-const Box = styled.table`
-    width: 50%;
-    border-top: 3px solid #444444;
-    border-bottom: 1.8px solid #444444;
-    border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+const Inbox = styled.li `
+    font-size:1.2rem;
+    color:#f36e65;
 `;
 
-const Item =styled.div`
-    margin: 20px auto 20px;
-    text-align: center;
-    color:black;
-`;
+
+
 
 class MemberList extends Component{
     state = {
@@ -66,19 +60,14 @@ class MemberList extends Component{
         const memberList = this.state.member!==''?this.state.member.map((data, id) => 
             <MemberItem key={id} name={data.name} number={data.number} phone={data.phone}/>):'';
         return(
-            <Item>
-                <h2>구성원 정보</h2>
+            <div>
                 <Box>
-                    <Upperbox>이름</Upperbox>
-                    <Upperbox>학번</Upperbox>
-                    <Upperbox>전화번호</Upperbox>
-
+                    <Inbox>이름</Inbox>
+                    <Inbox>학번</Inbox>
+                    <Inbox>전화번호</Inbox>
                 </Box>
-               
-
                 {memberList}
-                
-            </Item>
+            </div>
                 
         );
     }
