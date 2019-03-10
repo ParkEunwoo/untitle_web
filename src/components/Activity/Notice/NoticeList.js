@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom';
 import NoticeItem from './NoticeItem';
 import styled from 'styled-components';
 
@@ -16,28 +17,6 @@ const H2 = styled.h2 `
     padding-left : 1em;
     border-bottom : 2px solid #eeeeee;
 `;
-
-const activity = [
-    {
-        id : 0,
-        type : '멘토링1',
-        title : '과목이름1',
-        leader : '팀장이름1'
-    },
-    {
-        id : 1,
-        type : '멘토링2',
-        title : '과목이름2',
-        leader : '팀장이름2'
-    },
-    {
-        id : 2,
-        type : '멘토링3',
-        title : '과목이름3',
-        leader : '팀장이름3'
-    }
-];
-
 
 class NoticeList extends Component {
     state = {
@@ -69,13 +48,11 @@ class NoticeList extends Component {
     
     render() {
         const leaderBoard = this.state.leader!==''?this.state.leader.map(info=><NoticeItem key = {info._id} id = {info._id} type={info.type} title = {info.title} leader={info.leader} 
-            startDate = {info.period.startDate} endDate= {info.period.endDate}
-            recruitNum = {info.recruitNum} joinNum = {info.member.length} lead = {true}/>):
-        activity.map(activity=><NoticeItem key = {activity.id} id = {activity.id} type={activity.type} title={activity.title} leader={activity.leader} lead = {true}/>);
+            explain = {info.explain} startDate = {info.period.startDate} endDate= {info.period.endDate}
+            recruitNum = {info.recruitNum} joinNum = {info.member.length} lead = {true}/>):'';
         const memberBoard = this.state.member!==''?this.state.member.map(info=><NoticeItem key = {info._id} id = {info._id} type={info.type} title = {info.title} leader={info.leader} 
             startDate = {info.period.startDate} endDate= {info.period.endDate}
-            recruitNum = {info.recruitNum} joinNum = {info.member.length} lead = {false}/>):
-        activity.map(activity=><NoticeItem key = {activity.id} id = {activity.id} type={activity.type} title={activity.title} leader={activity.leader} lead = {false}/>);
+            recruitNum = {info.recruitNum} joinNum = {info.member.length} lead = {false}/>):'';
         return (
             <div>
             <H2>Leader</H2>
@@ -87,4 +64,4 @@ class NoticeList extends Component {
     }
 }
 
-export default NoticeList;
+export default withRouter(NoticeList);

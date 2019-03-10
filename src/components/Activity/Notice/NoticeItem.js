@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
+import { put } from 'axios';
 import more from 'lib/more.png';
 
 const Item = styled.div ` 
@@ -100,6 +101,16 @@ class NoticeItem extends Component {
       }
     }
   }
+  cancelRecruit = () => {
+    const url = `/api/recruit/cancel/${this.props.id}`;
+    return put(url);
+  }
+  handleCancel = () => {
+    this.cancelRecruit()
+      .then((response) => {
+        this.props.history.push('/activity');
+      });
+  }
 
     render() {
         const link = `/activity/${this.props.id}/notice`;
@@ -118,7 +129,18 @@ class NoticeItem extends Component {
                 </Block1>
 
                 <Block2 ref={(ref) => this.block2=ref}>
-                  <Button type={this.props.type}>정보수정</Button>
+                <NavLink to={{
+                    pathname:`recruit/modify/${this.props.id}`,
+                    state:{
+                      type: this.props.type,
+                      title: this.props.title,
+                      explain: this.props.explain,
+                      startDate: this.props.startDate,
+                      endDate: this.props.endDate,
+                      recruitNum: this.props.recruitNum
+                    }
+                  }}>
+                  <Button type={this.props.type}>정보수정</Button></NavLink>
                   <div>
                   <NavLink to={{
                     pathname:`activity/${this.props.id}/member`,
@@ -131,7 +153,7 @@ class NoticeItem extends Component {
                 </Block2>
 
                 <Block3 ref={(ref) => this.block3=ref}>
-                  <Button type={this.props.type}>신청취소</Button>
+                  <Button type={this.props.type} onClick={this.handleCancel}>신청취소</Button>
                 </Block3>
 
             </NavLink>
@@ -140,4 +162,4 @@ class NoticeItem extends Component {
     }
 }
 
-export default NoticeItem;
+export default withRouter(NoticeItem);
