@@ -106,7 +106,7 @@ class NoticeItem extends Component {
     }
   }
   cancelRecruit = () => {
-    const url = `/api/recruit/cancel/${this.props.id}`;
+    const url = `http://13.209.116.75:9000/api/recruit/cancel/${this.props.id}`;
     return put(url);
   }
   handleCancel = () => {

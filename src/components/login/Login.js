@@ -72,7 +72,7 @@ class Login extends Component {
 
   loginUser = () => {
     const {id, password} = this.state;
-    const url = `/api/users/login/${id}/${password}`;
+    const url = `http://13.209.116.75:9000/api/users/login/${id}/${password}`;
 
     return get(url);
 

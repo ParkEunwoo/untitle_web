@@ -75,7 +75,7 @@ class Apply extends Component{
   }
 
   applyRecruit = () => {
-    const url = `/api/recruit/apply/${this.state._id}`;
+    const url = `http://13.209.116.75:9000/api/recruit/apply/${this.state._id}`;
     return put(url);
   }
 

@@ -62,7 +62,7 @@ class App extends Component{
         userNumber: ''
     }
     getSession = () => {
-        get('/session').then((response) => {
+        get('http://13.209.116.75:9000/session').then((response) => {
             this.setState({
                 isSession: response.data.isSession,
                 userName: response.data.userName,

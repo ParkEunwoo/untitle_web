@@ -142,7 +142,7 @@ class RegisterForm extends Component{
   }
   
   registRecruit = () => {
-    const url = '/api/recruit/regist';
+    const url = 'http://13.209.116.75:9000/api/recruit/regist';
     const { type, title, explain, startDate, endDate, recruitNum } = this.state;
     const period = {
       startDate,

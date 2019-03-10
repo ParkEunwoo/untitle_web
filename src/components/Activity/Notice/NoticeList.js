@@ -35,13 +35,13 @@ class NoticeList extends Component {
     }
     
     callMemberApi = async () => {
-        const response = await fetch('/api/active/status/member');
+        const response = await fetch('http://13.209.116.75:9000/api/active/status/member');
         const body = await response.json();
         return body;
     }
 
     callLeaderApi = async () => {
-        const response = await fetch('/api/active/status/leader');
+        const response = await fetch('http://13.209.116.75:9000/api/active/status/leader');
         const body = await response.json();
         return body;
     }

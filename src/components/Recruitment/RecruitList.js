@@ -31,7 +31,7 @@ class RecruitList extends Component {
   }
 
   callApi = async () => {
-    const response = await fetch('/api/recruit/status');
+    const response = await fetch('http://13.209.116.75:9000/api/recruit/status');
     const body = await response.json();
     return body;
   }

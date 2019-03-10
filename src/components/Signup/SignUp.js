@@ -68,7 +68,7 @@ class SignUp extends Component {
   }
 
   signUpUser = () => {
-    const url = '/api/users/signup';
+    const url = 'http://13.209.116.75:9000/api/users/signup';
     const {name, number, id, password, phone} = this.state;
 
     return post(url, {name, number, id, password, phone});

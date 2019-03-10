@@ -24,7 +24,7 @@ class MemberList extends Component{
     }
     
     showMember = () => {
-      const url = `/api/active/member/${this.props.id}`;
+      const url = `http://13.209.116.75:9000/api/active/member/${this.props.id}`;
       return get(url);
     }
     

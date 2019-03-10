@@ -148,7 +148,7 @@ class ModifyForm extends Component{
   }
   
   modifyRecruit = () => {
-    const url = `/api/recruit/modify/${this.props.id}`;
+    const url = `http://13.209.116.75:9000/api/recruit/modify/${this.props.id}`;
     const { type, title, explain, startDate, endDate, recruitNum } = this.state;
     const period = {
       startDate,

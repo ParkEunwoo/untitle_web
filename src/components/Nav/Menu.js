@@ -33,7 +33,7 @@ const Item = styled.li`
 
 class Menu extends Component {
     handleLogout = () => {
-    get('/api/users/logout').then((response) => {
+    get('http://13.209.116.75:9000/api/users/logout').then((response) => {
         this.props.history.push("/");
     })
     .catch((err) => {
