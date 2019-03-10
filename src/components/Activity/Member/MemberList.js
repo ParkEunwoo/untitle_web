@@ -18,7 +18,6 @@ const Inbox = styled.li `
 
 
 
-
 class MemberList extends Component{
     state = {
         member:[{
