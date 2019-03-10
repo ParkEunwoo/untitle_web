@@ -107,7 +107,8 @@ class NoticeItem extends Component {
   }
   cancelRecruit = () => {
     const url = `http://13.209.116.75:9000/api/recruit/cancel/${this.props.id}`;
-    return put(url);
+    const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
+    return put(url , userInfo);
   }
   handleCancel = () => {
     this.cancelRecruit()

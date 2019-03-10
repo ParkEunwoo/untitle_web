@@ -154,7 +154,8 @@ class ModifyForm extends Component{
       startDate,
       endDate
     }
-    return put(url, { type, title, explain, period, recruitNum });
+    const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
+    return put(url, { type, title, explain, period, recruitNum, userInfo });
   }
 
   handleSubmit = (e) => {
