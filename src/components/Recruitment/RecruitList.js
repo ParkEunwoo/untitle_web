@@ -18,108 +18,6 @@ const Box = styled.div `
   grid-gap: 1.5em;
 `;
 
-const r = [{
-  type:"멘토링",
-  title:'예시 짧을 때',
-  leader: '박은우',
-  recruitNum: 19,
-  joinNum:1,
-  period:{
-    startDate:'19-03-02',
-    endDate:'19-06-05'
-  },
-  explain:''
-},{
-  type:"스터디",
-  title:'예시 길 때 이거는 제목이 이정도는 되는데 넘치지 않게 해줄 수 있는가요',
-  leader: '박은우',
-  recruitNum: 19,
-  joinNum:1,
-  period:{
-    startDate:'19-03-02',
-    endDate:'19-06-05'
-  },
-  explain:''
-},{
-  type:"프로젝트",
-  title:'예시 길 때 이거는 제목이 이정도는 되는데 넘치지 않게 해줄 수 있는가요',
-  leader: '박은우',
-  recruitNum: 19,
-  joinNum:1,
-  period:{
-    startDate:'19-03-02',
-    endDate:'19-06-05'
-  },
-  explain:''
-},{
-  type:"프로젝트",
-  title:'예시 길 때 이거는 제목이 이정도는 되는데 넘치지 않게 해줄 수 있는가요',
-  leader: '박은우',
-  recruitNum: 19,
-  joinNum:1,
-  period:{
-    startDate:'19-03-02',
-    endDate:'19-06-05'
-  },
-  explain:''
-},{
-  type:"프로젝트",
-  title:'예시 길 때 이거는 제목이 이정도는 되는데 넘치지 않게 해줄 수 있는가요',
-  leader: '박은우',
-  recruitNum: 19,
-  joinNum:1,
-  period:{
-    startDate:'19-03-02',
-    endDate:'19-06-05'
-  },
-  explain:''
-},{
-  type:"프로젝트",
-  title:'예시 길 때 이거는 제목이 이정도는 되는데 넘치지 않게 해줄 수 있는가요',
-  leader: '박은우',
-  recruitNum: 19,
-  joinNum:1,
-  period:{
-    startDate:'19-03-02',
-    endDate:'19-06-05'
-  },
-  explain:''
-},{
-  type:"프로젝트",
-  title:'예시 길 때 이거는 제목이 이정도는 되는데 넘치지 않게 해줄 수 있는가요',
-  leader: '박은우',
-  recruitNum: 19,
-  joinNum:1,
-  period:{
-    startDate:'19-03-02',
-    endDate:'19-06-05'
-  },
-  explain:''
-},{
-  type:"프로젝트",
-  title:'예시 길 때 이거는 제목이 이정도는 되는데 넘치지 않게 해줄 수 있는가요',
-  leader: '박은우',
-  recruitNum: 19,
-  joinNum:1,
-  period:{
-    startDate:'19-03-02',
-    endDate:'19-06-05'
-  },
-  explain:''
-},{
-  type:"프로젝트",
-  title:'예시 길 때 이거는 제목이 이정도는 되는데 넘치지 않게 해줄 수 있는가요',
-  leader: '박은우',
-  recruitNum: 19,
-  joinNum:1,
-  period:{
-    startDate:'19-03-02',
-    endDate:'19-06-05'
-  },
-  explain:''
-}
-];
-
 class RecruitList extends Component {
 
   state = {
@@ -152,17 +50,7 @@ class RecruitList extends Component {
       leader = {info.leader} 
       startDate = {info.period.startDate} endDate= {info.period.endDate}
       recruitNum = {info.recruitNum} joinNum = {info.member.length} /></NavLink>)
-      : r.map(info => <NavLink to={{
-        pathname:"/recruit/apply",
-        state:{
-          info
-        }
-      }}>
-      <RecruitItem key = {info._id} title = {info.title}
-        type = {info.type}
-        leader = {info.leader} 
-        startDate = {info.period.startDate} endDate= {info.period.endDate}
-        recruitNum = {info.recruitNum} joinNum = {info.joinNum} /></NavLink>);
+      : '';
     
     return (
       <div>
