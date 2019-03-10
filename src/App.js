@@ -61,29 +61,9 @@ class App extends Component{
         userName: '',
         userNumber: ''
     }
-    getSession = () => {
-        get('http://13.209.116.75:9000/session').then((response) => {
-            this.setState({
-                isSession: response.data.isSession,
-                userName: response.data.userName,
-                userNumber: response.data.userNumber
-            });
-            check=true;
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-    }
-    componentDidUpdate(prevProps, prevState, snapshot){
-
-        if(!check){
-            this.getSession();
-        }
-        check=false;
-
-    }
     componentDidMount() {
-        this.getSession();
+        const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
+        console.log(userInfo);
     }
     render(){
     return (

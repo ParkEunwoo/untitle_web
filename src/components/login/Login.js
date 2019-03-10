@@ -83,6 +83,8 @@ class Login extends Component {
     this.loginUser()
       .then((response) => {
         if(response.data.success){
+          const {userName, userNumber, userPhone} = response.data.success;
+          sessionStorage.setItem('userInfo', JSON.stringify({userName, userNumber, userPhone}))
           this.props.history.push("/");
         }
       });
