@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Nav from 'components/Nav';
-import { get } from 'axios';
 import { Route  } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import {
@@ -54,22 +53,22 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 
-let check = false;
 class App extends Component{
     state = {
-        isSession: false,
-        userName: '',
-        userNumber: ''
+        userInfo:''
     }
     componentDidMount() {
         const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
-        console.log(userInfo);
+
+        this.setState({
+            userInfo
+        });
     }
     render(){
     return (
         <div>
             <GlobalStyle />
-            <Nav isSession={this.state.isSession}/>
+            <Nav isSession={this.state.userInfo===''?false:true}/>
             <Route exact path="/" component={UpIndex}/>
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/signup" component={SignUpPage} />
