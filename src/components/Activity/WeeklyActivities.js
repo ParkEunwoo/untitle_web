@@ -1,5 +1,25 @@
 import React, { Component } from 'react';
 import WeeklyActItem from './WeeklyActItem';
+import styled from 'styled-components';
+
+const Box = styled.div `
+  border: 1px solid #d9dbdb;
+  background-color: white;
+  margin-top: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 4%;
+`;
+
+const BoxTop = styled.h2 `
+  margin: 0;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 2.5% 4%;
+  width :100%;
+  border-bottom: 1px solid #d9dbdb;
+  background-color: #034B61 ;
+`;
 
 const content = [
     {
@@ -82,9 +102,10 @@ class WeeklyActivities extends Component {
         const weeklist = content.map(content=><WeeklyActItem  key = {content.week} week = {content.week} title = {content.title} date = {content.date} text = {content.text} 
             file ={content.file} comment = {content.comment}/>);
         return (
-            <div>
+            <Box>
+                <BoxTop>주차별 활동 내용</BoxTop>
                 {weeklist}
-            </div>
+            </Box>
         );
     }
 }
