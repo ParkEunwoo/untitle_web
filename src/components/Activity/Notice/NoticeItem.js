@@ -25,16 +25,19 @@ const Type = styled.h4 `
 `;
 
 const More = styled.img `
-  width : 1em;
+  width : 7.5%;
   height : auto;
   float: right;
-  border-radius : 200%;
   cursor:pointer;
+  background-color: #f8f8f8;
   &:hover {
     background-color : #eeeeee;
   }
-
+  border-radius : 10%;
+  border:none;
 `;
+
+
 
 const Button = styled.button `
     font-size : 1em;
@@ -67,6 +70,7 @@ const Button = styled.button `
 
 const Block1 = styled.p `
     display : block;
+    transition: 0.2s ease-out;
 `;
 
 const Block2 = styled.p `
@@ -106,7 +110,7 @@ class NoticeItem extends Component {
 
         return (
             <Item>
-              <div> <More src={more} alt="더보기" onClick={this.handleChange}></More></div>
+            <More src={more} alt="더보기" onClick={this.handleChange}/>
             <NavLink to={link}>
                 <Type type={this.props.type}>{this.props.type}</Type>
                 <h2>{this.props.title}</h2>

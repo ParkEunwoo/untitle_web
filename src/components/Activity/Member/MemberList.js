@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import MemberItem from './MemberItem';
 import { get } from 'axios';
 
-
 class MemberList extends Component{
     state = {
         member:[{
