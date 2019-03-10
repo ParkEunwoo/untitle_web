@@ -158,11 +158,12 @@ const Block = styled.div `
     max-height: 0;
     transition: 0.2s ease-out;
 `;
+/*
 const Img = styled.img `
     color: #ffffff;
     width: 3%;
     height: auto;
-`;
+`;*/
 
 
 class Explain extends Component {
@@ -205,6 +206,7 @@ class Explain extends Component {
                             <p>Activity > Leader게시판 중 더보기 버튼 누르기 > 구성원 정보</p>
                         </Block>
                 </Explains>
+                
             </Div>
         );
     }

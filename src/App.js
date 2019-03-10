@@ -15,6 +15,7 @@ import {
     PortFolio,
     RecruitPage,
     ApplyPage,
+    ModifyPage,
     TimeTablePage,
     RegisterPage,
     MemberPage
@@ -97,6 +98,7 @@ class App extends Component{
             <Route exact path="/recruit" component={RecruitPage} />
             <Route exact path="/recruit/register" component={RegisterPage} />
             <Route exact path="/recruit/apply" component={ApplyPage} />
+            <Route exact path="/recruit/modify/:id" component={ModifyPage} />
             <Route exact path="/recruit/apply/timetable" component={TimeTablePage} />
             <Route exact path="/portfolio" component={PortFolio} />
             <Route exact path="/activity/:id/notice" component={ActivityPage}/>
