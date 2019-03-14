@@ -13,3 +13,4 @@ export { default as ModifyPage } from './ModifyPage';
 export { default as TimeTablePage } from './TimeTablePage';
 export { default as RegisterPage } from './RegisterPage';
 export { default as MemberPage } from './MemberPage';
+export { default as Admin } from './Admin';

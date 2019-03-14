@@ -58,13 +58,27 @@ class SignUp extends Component {
     id: '',
     password: '',
     pw_check: '',
-    phone: ''
+    phone: '',
+    check: false
   }
 
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
-    })
+    });
+    switch(e.target.name){
+      case 'name': if(this.state.name){
+        break;
+      } 
+      case 'number' : if(this.state.number){
+        break;
+      }
+      
+      default : this.setState({check:true});
+    }
+    this.setState({
+      check: true
+    });
   }
 
   signUpUser = () => {

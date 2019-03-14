@@ -35,7 +35,8 @@ class Menu extends Component {
     handleLogout = () => {
         sessionStorage.clear();
     get('http://13.209.116.75:9000/api/users/logout').then((response) => {
-        this.props.history.push("/");
+
+        this.props.history.push("/");        window.location.reload();
     })
     .catch((err) => {
         console.log(err);
