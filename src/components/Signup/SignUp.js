@@ -84,8 +84,8 @@ class SignUp extends Component {
   signUpUser = () => {
     const url = 'http://13.209.116.75:9000/api/users/signup';
     const {name, number, id, password, phone} = this.state;
-
-    return post(url, {name, number, id, password, phone});
+    const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
+    return post(url, {name, number, id, password, phone, userInfo});
   }
 
   handleSubmit = (e) => {

@@ -80,7 +80,6 @@ class Apply extends Component{
 
   applyRecruit = () => {
     const url = `http://13.209.116.75:9000/api/recruit/apply/${this.state._id}`;
-    
     const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
     return put(url, {userInfo});
   }
