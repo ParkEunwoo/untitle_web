@@ -25,23 +25,26 @@ class NoticeList extends Component {
     }
 
     componentDidMount() {
-        this.callMemberApi()
+        const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
+        const number = userInfo?userInfo.userNumber:'';
+        const name = userInfo?userInfo.userName:'';
+        this.callMemberApi(number)
           .then(res => this.setState({member: res}))
           .catch(err => console.error(err));
 
-        this.callLeaderApi()
+        this.callLeaderApi(name)
             .then(res => this.setState({leader: res}))
             .catch(err => console.error(err));
     }
     
-    callMemberApi = async () => {
-        const response = await fetch('http://13.209.116.75:9000/api/active/status/member');
+    callMemberApi = async (id) => {
+        const response = await fetch(`http://13.209.116.75:9000/api/active/status/member/${id}`);
         const body = await response.json();
         return body;
     }
 
-    callLeaderApi = async () => {
-        const response = await fetch('http://13.209.116.75:9000/api/active/status/leader');
+    callLeaderApi = async (id) => {
+        const response = await fetch(`http://13.209.116.75:9000/api/active/status/leader/${id}`);
         const body = await response.json();
         return body;
     }

@@ -58,13 +58,27 @@ class SignUp extends Component {
     id: '',
     password: '',
     pw_check: '',
-    phone: ''
+    phone: '',
+    check: false,
+    info:''
+  }
+
+  componentDidMount() {
+    this.callApi()
+      .then(res => this.setState({info: res}))
+      .catch(err => console.error(err));
+  }
+
+  callApi = async () => {
+    const response = await fetch('http://13.209.116.75:9000/api/users/show/admin');
+    const body = await response.json();
+    return body;
   }
 
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
-    })
+    });
   }
 
   signUpUser = () => {
