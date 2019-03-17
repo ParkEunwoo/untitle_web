@@ -6,6 +6,9 @@ import { get } from 'axios';
 
 const Logo = styled.img`
     height: 50px;
+	@media (max-width: 640px) {
+        height: 20px;
+	}
 `;
 
 const List = styled.ul`
@@ -28,6 +31,9 @@ const Item = styled.li`
         margin-right:auto;
     }
     cursor:pointer;
+	@media (max-width: 640px) {
+        font-size: 0.6em;
+	}
 `;
 
 
