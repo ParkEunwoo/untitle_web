@@ -17,7 +17,8 @@ import {
     ModifyPage,
     TimeTablePage,
     RegisterPage,
-    MemberPage
+    MemberPage,
+    Admin
 } from 'pages';
 
 const GlobalStyle = createGlobalStyle`
@@ -57,13 +58,13 @@ class App extends Component{
     state = {
         userInfo:''
     }
-    
     render(){
     return (
         <div>
             <GlobalStyle />
             <Nav isSession={JSON.parse(sessionStorage.getItem('userInfo'))==null?false:true}/>
             <Route exact path="/" component={UpIndex}/>
+            <Route exact path="/admin" component={Admin} />
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/signup" component={SignUpPage} />
             <Route exact path="/check" component={CheckPage} /> 

@@ -134,6 +134,9 @@ const Explains = styled.div `
 const Info = styled.div `
     color: #ffffff;
     font-size: 2em;
+	@media (max-width: 640px) {
+        font-size: 0.8em;
+	}
     padding : 1%;
     margin-left: 2%;
     margin-right: 2%;

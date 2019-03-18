@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { put } from 'axios';
+import { put, get } from 'axios';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -111,6 +111,7 @@ const Explain = styled.div `
   margin-bottom : 2%;
 `;
 
+
 const Button = styled.button `
   border: none;
   background-color: #000000;
@@ -120,6 +121,7 @@ const Button = styled.button `
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 0.5em;
 `;
 
 class ModifyForm extends Component{
@@ -146,7 +148,20 @@ class ModifyForm extends Component{
       type,title,explain,startDate, endDate,recruitNum
     });
   }
-  
+
+  deleteRecruit = () => {
+    const url = `http://13.209.116.75:9000/api/recruit/delete/${this.props.id}`;
+
+    return get(url);
+  }
+
+  handleDelete = () => {
+    this.deleteRecruit()
+      .then((response) => {
+        this.props.history.push('/activity');
+      })
+  }
+
   modifyRecruit = () => {
     const url = `http://13.209.116.75:9000/api/recruit/modify/${this.props.id}`;
     const { type, title, explain, startDate, endDate, recruitNum } = this.state;
@@ -190,8 +205,9 @@ class ModifyForm extends Component{
         <Explain><Label>수업내용</Label> 
         <Textarea name = "explain" onChange={this.handleChange} value={this.state.explain}></Textarea></Explain>
         
-        <Button type = "submit">수정</Button>
+          <Button type = "submit">수정</Button>
       </Form>
+          <Button onClick = {this.handleDelete}>삭제</Button>
       </Box>
 
     );

@@ -12,6 +12,10 @@ const Box = styled.div `
   margin-right: 10em;
   margin-bottom:3em;
 
+	@media (max-width: 640px) {
+    margin: 0;
+	}
+  
 `;
 
 const BoxTop = styled.h2 `
@@ -77,14 +81,19 @@ class Apply extends Component{
   applyRecruit = () => {
     const url = `http://13.209.116.75:9000/api/recruit/apply/${this.state._id}`;
     const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
-    return put(url, userInfo);
+    return put(url, {userInfo});
   }
 
   handleSubmit = () => {
+    if(this.state.joinNum >= this.state.recruitNum && this.state.recruitNum>0){
+      console.log("신청인원초과");
+    }
+    else{
     this.applyRecruit()
       .then((response) => {
         this.props.history.push('/recruit');
       });
+    }
   }
 
   render() { 

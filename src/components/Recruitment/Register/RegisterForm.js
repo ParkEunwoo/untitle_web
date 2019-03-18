@@ -149,7 +149,7 @@ class RegisterForm extends Component{
       endDate
     };
     const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
-
+    console.log(userInfo);
     return post(url, { type, title, explain, period, recruitNum, userInfo });
   }
 

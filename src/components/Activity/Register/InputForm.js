@@ -66,18 +66,6 @@ class InputForm extends Component {
                     onChange={this.handleChange} 
                     placeholder="내용을 입력하세요"/></div>
 
-                    <div>과제 : <input type="text" 
-                    value = {this.state.work.title}
-                    onChange={this.handleWorkChange}
-                    name="title"/>
-                    내용 : <textarea
-                    value = {this.state.work.content}
-                    onChange={this.handleWorkChange}
-                    name="content" />
-                   </div>
-
-                    <div>첨부파일
-                    </div>
                     <button type="submit"
                     onClick={this.handleSubmit}>저장</button>
                 </form>
