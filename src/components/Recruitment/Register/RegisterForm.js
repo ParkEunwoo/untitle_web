@@ -68,11 +68,12 @@ const Textarea = styled.textarea `
   padding-bottom : 20%;
   margin-top: 1%;
   margin-left: 2%;
+  resize: none;
 `;
 
 const CheckBox = styled.input `
-  width:2em;
-  height:2em;
+  width: 1.5em;
+  height: 1.5em;
   cursor: pointer;
 `;
 
@@ -85,8 +86,8 @@ const CheckBoxLabel = styled.label `
 
 const Label = styled.label `
   margin: 1.5% 5%;
-  display : inline-block;
-  float:left;
+  display: inline-block;
+  float: left;
 `;
 
 const Title = styled.div `
