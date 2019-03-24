@@ -77,7 +77,7 @@ class App extends Component{
             <Route exact path="/portfolio" component={PortFolio} />
             <Route exact path="/activity/:id/notice" component={ActivityPage}/>
             <Route exact path="/activity" component={NoticePage}/>
-            <Route exact path="/activity/register" component={InputActivity}/>
+            <Route exact path="/activity/register/:id" component={InputActivity}/>
             <Route exact path="/activity/:id/member" component={MemberPage}/>
         </div>
     );

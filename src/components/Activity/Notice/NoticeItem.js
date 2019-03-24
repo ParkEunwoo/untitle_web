@@ -129,7 +129,6 @@ class NoticeItem extends Component {
                 <Type type={this.props.type}>{this.props.type}</Type>
                 <h2>{this.props.title}</h2>
                 <h3>{this.props.leader}</h3>
-
                 <Block1 ref={(ref) => this.block1=ref}>
                   <div>{this.props.startDate} ~ {this.props.endDate}</div>
                   <div>{this.props.joinNum}/{this.props.recruitNum}명</div>

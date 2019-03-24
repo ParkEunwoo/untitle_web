@@ -8,7 +8,7 @@ class InputActivity extends Component {
     return (
       <Fragment>
         <Header title="과목명" sub="팀장명"/>
-        <InputForm/>
+        <InputForm id={this.props.match.params.id}/>
       </Fragment>
     );
   }

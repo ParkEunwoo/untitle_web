@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { post } from 'axios';
 
 const Box = styled.div `
   border: 1px solid #d9dbdb;
@@ -89,14 +90,6 @@ class InputForm extends Component {
         week: 1,
         title:'',
         content : '',
-        file : {
-          data: null,
-          name: ''  
-        },
-        work : {
-            title:'',
-            content:''
-        }
     }
 
     handleChange = (e) => {
@@ -105,27 +98,20 @@ class InputForm extends Component {
           [e.target.name]: value
         });
     }
-
-    handleWorkChange = (e) => {
-        const value = e.target.value;
-        
-        console.log(e.target.name)
-        console.log(e.target.value)
-        this.setState({
-            work:{
-                [e.target.name] : value
-            }
-        });
-        console.log(this.state);
-    }
-
-    handleFileChange = (e) => {
-
-    }
     
+  registWeek = () => {
+    const url = `http://13.209.116.75:9000/api/active/regist/${this.props.id}`;
+    const activity = this.state;
+    console.log(activity);
+    return post(url, {activity});
+  }
+
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        this.registWeek()
+          .then((response) => {
+            this.props.history.push('/activity');
+          });
     }
 
     render() {
